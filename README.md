@@ -45,7 +45,9 @@ For those interested, GitHub has extensive [documentation](https://docs.github.c
 - **GitHub Desktop**
 - **Protégé**
 
-### 1. Clone repository
+### 0. Clone repository
+**This only needs to be done when setting up GitHub Desktop the first time.**
+
 **Cloning** a Git repo means you're copying the entire project (files, history, branches)
 to your local machine and setting up a connection to the remote repository so you can sync changes easily.
 
@@ -59,7 +61,7 @@ the local directory it should be cloned to.
 
 ![Git clone url](Figures/tutorial-git-clone-url.png)
 
-### 2. Check current branch
+### 1. Check current branch
 A Git **branch** is a separate workspace that allows you to make changes in isolation from the main code.
 In this work we will use two branches:
 
@@ -70,3 +72,16 @@ When editing the ontology file, make sure you are currently working in the ``dev
 This can be seen by looking at the **Current branch** drop down menu.
 
 ![git branch](Figures/tutorial-git-branch.png)
+
+The `develop` branch will be periodically merged into the `main` branch, resulting in an updated
+version of the Diversify ontology.
+
+### 2. Pull to update to current files
+It is best practice to **pull** the most recent changes your working branch before making new changes.
+This will update files in your local directory according to any changes made since you last edited.
+
+In order to make take the `git pull` action, click on **Repository** and then **Pull**.
+
+![git pull](Figures/tutorial-git-pull.png)
+
+Additionally the shortcut `Ctrl`+`Shift`+`P` can be used for Windows and `Shift`+`Command`+`P` for Mac.
