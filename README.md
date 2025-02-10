@@ -52,12 +52,12 @@ to your local machine and setting up a connection to the remote repository so yo
 This is can be done using the GitHub Desktop by clicking on **Current repository**,
 then **Add**, then **Clone repository...**.
 
-![Git clone](Figures\tutorial-git-clone.png)
+![Git clone](Figures/tutorial-git-clone.png)
 
 This will open a popup window where you can enter the Git repo URL to be cloned and specify
 the local directory it should be cloned to.
 
-![Git clone url](Figures\tutorial-git-clone-url.png))
+![Git clone url](Figures/tutorial-git-clone-url.png)
 
 ### 2. Check current branch
 A Git **branch** is a separate workspace that allows you to make changes in isolation from the main code.
@@ -69,4 +69,4 @@ In this work we will use two branches:
 When editing the ontology file, make sure you are currently working in the ``develop`` branch.
 This can be seen by looking at the **Current branch** drop down menu.
 
-![git branch](Figures\tutorial-git-branch.png)
+![git branch](Figures/tutorial-git-branch.png)
