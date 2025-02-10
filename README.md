@@ -51,7 +51,7 @@ For those interested, GitHub has extensive [documentation](https://docs.github.c
 2. [Pull latest project updates](#2-pull-to-update-to-current-files)
 3. [Make changes in Protégé](#3-make-the-changes-you-want)
 4. [Commit changes to GitHub](#4-commit-changes-in-github)
-5. [Push changes to repository](#5-push-to-the-repository)
+5. [Push changes to repository](#5-push-changes-to-shared-repository)
 
 ### 0. Clone repository
 **This only needs to be done when setting up GitHub Desktop the first time.**
