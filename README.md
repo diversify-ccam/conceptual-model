@@ -142,5 +142,8 @@ When you are ready, hit the **Commit to develop** button to finalize the changes
 ### 5. Push changes to shared repository
 When you are ready to add your changes to the shared repository, you can do the following:
 1. **pull** again from the ``develop`` branch. This is good practice as another user may
-have made changes to files since you last pulled.
-2. If there are not conflicts, **push** your committed changes to the ``develop`` branch. This is don
+have made changes to files since you last pulled. This is the same process as [earlier](#2-pull-to-update-to-current-files).
+2. If there are not conflicts, **push** your committed changes to the ``develop`` branch. This is done by using the **Push origin**
+button. You will also see the number of commits that have not been added to the shared repository.
+
+![git push](Figures/tutorial-git-push.png)
