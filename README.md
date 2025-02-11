@@ -147,3 +147,8 @@ have made changes to files since you last pulled. This is the same process as [e
 button. You will also see the number of commits that have not been added to the shared repository.
 
 ![git push](Figures/tutorial-git-push.png)
+
+## Contact
+For questions or more information, please reach out:
+- Peter Brosten
+- [peter.brosten@eurecat.org]
