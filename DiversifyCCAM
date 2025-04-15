@@ -1,0 +1,680 @@
+@prefix : <http://www.semanticweb.org/diversify-ccam/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@base <http://www.semanticweb.org/diversify-ccam/> .
+
+<http://www.semanticweb.org/diversify-ccam> rdf:type owl:Ontology ;
+                                             rdfs:comment "This is version v0.1 of the DiversifyCCAM comceptual model." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/decription
+dc:decription rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+terms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+terms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam#attituteTowards
+:attituteTowards rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Attitude ;
+                 rdfs:range :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam#canBeBoth
+:canBeBoth rdf:type owl:ObjectProperty ;
+           rdfs:domain :Innovation ;
+           rdfs:range :NewMobilityOptions ,
+                      :NewTechnologies ,
+                      :Sustainability .
+
+
+###  http://www.semanticweb.org/diversify-ccam#consistsOf
+:consistsOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Perception ;
+            rdfs:range :Benefits ,
+                       :Risks .
+
+
+###  http://www.semanticweb.org/diversify-ccam#hasAttitude
+:hasAttitude rdf:type owl:ObjectProperty ;
+             rdfs:domain :Population ;
+             rdfs:range :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#influences
+:influences rdf:type owl:ObjectProperty ;
+            rdfs:domain :Benefits ,
+                        :Risks ;
+            rdfs:range :PerceivedMeasurement .
+
+
+###  http://www.semanticweb.org/diversify-ccam#isDrivenBy
+:isDrivenBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Trust ,
+                        :Value ;
+            rdfs:range :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#isMeasuredBy
+:isMeasuredBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Driver ,
+                          :Perception ;
+              rdfs:range :PerceivedMeasurement .
+
+
+###  http://www.semanticweb.org/diversify-ccam#motivatedBy
+:motivatedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Attitude ;
+             rdfs:range :Perception .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasFauna
+:hasFauna rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ecosystem ;
+          rdfs:range :AnimalPopulation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasFlora
+:hasFlora rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ecosystem ;
+          rdfs:range :PlantPopulation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasGeometry
+:hasGeometry rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
+             rdfs:range <http://www.opengis.net/ont/geosparql#Geometry> ;
+             rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                              <http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/feature-properties> ,
+                              <http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/feature-properties> ;
+             skos:definition "A spatial representation for a given Feature."@en ;
+             skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.2> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.3> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.4> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.5> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.6> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.8> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.2> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.3> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.2> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.3> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.4> ,
+                          <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.2> ;
+             skos:prefLabel "has geometry"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasInfrastructure
+:hasInfrastructure rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Settlement ;
+                   rdfs:range :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasMorphology
+:hasMorphology rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
+               rdfs:range :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasPopulation
+:hasPopulation rdf:type owl:ObjectProperty ;
+               rdfs:domain :Settlement ;
+               rdfs:range :HumanPopulation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasTopography
+:hasTopography rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
+               rdfs:range :Topography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/sfContains
+:sfContains rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+            rdfs:range <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+            rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                             <http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/rcc8-spatial-relations> ,
+                             <http://www.opengis.net/spec/geosparql/1.1/req/topology-vocab-extension/rcc8-spatial-relations> ;
+            rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
+            skos:definition "States that the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+            skos:prefLabel "contains"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/sfWithin
+:sfWithin rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+          rdfs:range <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+          rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                           <http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/sf-spatial-relations> ,
+                           <http://www.opengis.net/spec/geosparql/1.1/req/topology-vocab-extension/sf-spatial-relations> ;
+          rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
+          skos:definition "States that the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+          skos:prefLabel "within"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                               rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                                                                <http://www.opengis.net/spec/geosparql/1.0/req/core/feature-class> ,
+                                                                <http://www.opengis.net/spec/geosparql/1.1/req/core/feature-class> ;
+                                               skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.1> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.2> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.3> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.4> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.5> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.6> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.7> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.8> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.9> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.2> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.3> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.2> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.3> ,
+                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.4> ;
+                                               skos:note "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                                                                 <http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-class> ,
+                                                                 <http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-class> ;
+                                                skos:definition "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
+                                                skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.2> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.3> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.4> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.5> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.6> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.8> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.1> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.2> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.3> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.2> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.3> ,
+                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.4> ;
+                                                skos:note "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en ;
+                                                skos:prefLabel "Geometry"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Geography ;
+                                                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
+                                                                      <http://www.opengis.net/spec/geosparql/1.0/req/core/spatial-object-class> ,
+                                                                      <http://www.opengis.net/spec/geosparql/1.1/req/core/spatial-object-class> ;
+                                                     skos:definition "Anything spatial (being or having a shape, position or an extent)."@en ;
+                                                     skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.1.1> ,
+                                                                  <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.1.2> ;
+                                                     skos:note "Subclasses of this class are expected to be used for instance data."@en ;
+                                                     skos:prefLabel "Spatial Object"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Accountability
+:Accountability rdf:type owl:Class ;
+                rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Attitude
+:Attitude rdf:type owl:Class ;
+          rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Benefits
+:Benefits rdf:type owl:Class ;
+          rdfs:subClassOf :Perception .
+
+
+###  http://www.semanticweb.org/diversify-ccam#CCAM
+:CCAM rdf:type owl:Class ;
+      rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Car
+:Car rdf:type owl:Class ;
+     rdfs:subClassOf :PrivateTransport .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Ciclying
+:Ciclying rdf:type owl:Class ;
+          rdfs:subClassOf :Mobility .
+
+
+###  http://www.semanticweb.org/diversify-ccam#CulturalThing
+:CulturalThing rdf:type owl:Class ;
+               rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Culture
+:Culture rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Driver
+:Driver rdf:type owl:Class ;
+        rdfs:subClassOf :Trust .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Effectiveness
+:Effectiveness rdf:type owl:Class ;
+               rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Fairness
+:Fairness rdf:type owl:Class ;
+          rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#GreenInitiatives
+:GreenInitiatives rdf:type owl:Class ;
+                  rdfs:subClassOf :Sustainability .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Identity
+:Identity rdf:type owl:Class ;
+          rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Inclusivity
+:Inclusivity rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Innovation
+:Innovation rdf:type owl:Class ;
+            rdfs:subClassOf :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Integrity
+:Integrity rdf:type owl:Class ;
+           rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Intermodality
+:Intermodality rdf:type owl:Class ;
+               rdfs:subClassOf :Mobility .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Mobility
+:Mobility rdf:type owl:Class ;
+          rdfs:subClassOf :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam#NewMobilityOptions
+:NewMobilityOptions rdf:type owl:Class ;
+                    rdfs:subClassOf :Innovation .
+
+
+###  http://www.semanticweb.org/diversify-ccam#NewTechnologies
+:NewTechnologies rdf:type owl:Class ;
+                 rdfs:subClassOf :Innovation .
+
+
+###  http://www.semanticweb.org/diversify-ccam#PerceivedMeasurement
+:PerceivedMeasurement rdf:type owl:Class ;
+                      rdfs:subClassOf :Perception .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Perception
+:Perception rdf:type owl:Class ;
+            rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#PolicyRules
+:PolicyRules rdf:type owl:Class ;
+             rdfs:subClassOf :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Population
+:Population rdf:type owl:Class ;
+            rdfs:subClassOf :Culture .
+
+
+###  http://www.semanticweb.org/diversify-ccam#PrivateTransport
+:PrivateTransport rdf:type owl:Class ;
+                  rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam#PublicInterest
+:PublicInterest rdf:type owl:Class ;
+                rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#PublicTransport
+:PublicTransport rdf:type owl:Class ;
+                 rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Reliability
+:Reliability rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Risks
+:Risks rdf:type owl:Class ;
+       rdfs:subClassOf :Perception .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Safety
+:Safety rdf:type owl:Class ;
+        rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Satisfaction
+:Satisfaction rdf:type owl:Class ;
+              rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Sustainability
+:Sustainability rdf:type owl:Class ;
+                rdfs:subClassOf :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Transparency
+:Transparency rdf:type owl:Class ;
+              rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam#TransportSystem
+:TransportSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Mobility .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Trust
+:Trust rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Value
+:Value rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Walking
+:Walking rdf:type owl:Class ;
+         rdfs:subClassOf :Mobility .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Adherence/UserPreference
+<http://www.semanticweb.org/diversify-ccam#Adherence/UserPreference> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam/AnimalPopulation
+:AnimalPopulation rdf:type owl:Class ;
+                  rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam/BuiltEnvironment
+:BuiltEnvironment rdf:type owl:Class ;
+                  rdfs:subClassOf :Environment ;
+                  owl:disjointWith :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Climate
+:Climate rdf:type owl:Class ;
+         rdfs:subClassOf :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/CyclingInfrastructure
+:CyclingInfrastructure rdf:type owl:Class ;
+                       rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/DigitalInfrastructure
+:DigitalInfrastructure rdf:type owl:Class ;
+                       rdfs:subClassOf :Infrastructure ;
+                       owl:disjointWith :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Ecosystem
+:Ecosystem rdf:type owl:Class ;
+           rdfs:subClassOf :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Environment
+:Environment rdf:type owl:Class ;
+             rdfs:subClassOf :Geography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Fog
+:Fog rdf:type owl:Class ;
+     rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Geography
+:Geography rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Hill
+:Hill rdf:type owl:Class ;
+      rdfs:subClassOf :Landform .
+
+
+###  http://www.semanticweb.org/diversify-ccam/HumanPopulation
+:HumanPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Infrastructure
+:Infrastructure rdf:type owl:Class ;
+                rdfs:subClassOf :BuiltEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/LandUseDevelopment
+:LandUseDevelopment rdf:type owl:Class ;
+                    rdfs:subClassOf :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Landform
+:Landform rdf:type owl:Class ;
+          rdfs:subClassOf :Topography ;
+          owl:disjointWith :WaterBody .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Morphology
+:Morphology rdf:type owl:Class ;
+            rdfs:subClassOf :BuiltEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/NaturalEnvironment
+:NaturalEnvironment rdf:type owl:Class ;
+                    rdfs:subClassOf :Environment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PedestrianInfrastructure
+:PedestrianInfrastructure rdf:type owl:Class ;
+                          rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PlantPopulation
+:PlantPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Population
+:Population rdf:type owl:Class ;
+            rdfs:subClassOf :Geography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Precipitation
+:Precipitation rdf:type owl:Class ;
+               rdfs:subClassOf :WeatherEvent ;
+               owl:disjointWith :Wind .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Rain
+:Rain rdf:type owl:Class ;
+      rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/River
+:River rdf:type owl:Class ;
+       rdfs:subClassOf :WaterBody .
+
+
+###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
+:RoadInfrastructure rdf:type owl:Class ;
+                    rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Settlement
+:Settlement rdf:type owl:Class ;
+            rdfs:subClassOf :BuiltEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/SiteDensity
+:SiteDensity rdf:type owl:Class ;
+             rdfs:subClassOf :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Snow
+:Snow rdf:type owl:Class ;
+      rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Topography
+:Topography rdf:type owl:Class ;
+            rdfs:subClassOf :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/TransportInfrastructure
+:TransportInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/UrbanMakeup
+:UrbanMakeup rdf:type owl:Class ;
+             rdfs:subClassOf :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/WaterBody
+:WaterBody rdf:type owl:Class ;
+           rdfs:subClassOf :Topography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/WeatherEvent
+:WeatherEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Climate .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Wind
+:Wind rdf:type owl:Class ;
+      rdfs:subClassOf :WeatherEvent .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnimalPopulation
+                :HumanPopulation
+                :PlantPopulation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Climate
+                :Ecosystem
+                :Topography
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Fog
+                :Rain
+                :Snow
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Infrastructure
+                :Morphology
+                :Settlement
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :LandUseDevelopment
+                :SiteDensity
+                :UrbanMakeup
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
