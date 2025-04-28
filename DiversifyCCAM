@@ -78,13 +78,13 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#attituteTowards
+###  http://www.semanticweb.org/diversify-ccam/attituteTowards
 :attituteTowards rdf:type owl:ObjectProperty ;
                  rdfs:domain :Attitude ;
                  rdfs:range :CulturalThing .
 
 
-###  http://www.semanticweb.org/diversify-ccam#canBeBoth
+###  http://www.semanticweb.org/diversify-ccam/canBeBoth
 :canBeBoth rdf:type owl:ObjectProperty ;
            rdfs:domain :Innovation ;
            rdfs:range :NewMobilityOptions ,
@@ -92,44 +92,17 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                       :Sustainability .
 
 
-###  http://www.semanticweb.org/diversify-ccam#consistsOf
+###  http://www.semanticweb.org/diversify-ccam/consistsOf
 :consistsOf rdf:type owl:ObjectProperty ;
             rdfs:domain :Perception ;
             rdfs:range :Benefits ,
                        :Risks .
 
 
-###  http://www.semanticweb.org/diversify-ccam#hasAttitude
+###  http://www.semanticweb.org/diversify-ccam/hasAttitude
 :hasAttitude rdf:type owl:ObjectProperty ;
              rdfs:domain :Population ;
              rdfs:range :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#influences
-:influences rdf:type owl:ObjectProperty ;
-            rdfs:domain :Benefits ,
-                        :Risks ;
-            rdfs:range :PerceivedMeasurement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#isDrivenBy
-:isDrivenBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Trust ,
-                        :Value ;
-            rdfs:range :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#isMeasuredBy
-:isMeasuredBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :Driver ,
-                          :Perception ;
-              rdfs:range :PerceivedMeasurement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#motivatedBy
-:motivatedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain :Attitude ;
-             rdfs:range :Perception .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasFauna
@@ -192,6 +165,33 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
                rdfs:range :Topography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/influences
+:influences rdf:type owl:ObjectProperty ;
+            rdfs:domain :Benefits ,
+                        :Risks ;
+            rdfs:range :PerceivedMeasurement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/isDrivenBy
+:isDrivenBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Trust ,
+                        :Value ;
+            rdfs:range :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/isMeasuredBy
+:isMeasuredBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Driver ,
+                          :Perception ;
+              rdfs:range :PerceivedMeasurement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/motivatedBy
+:motivatedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Attitude ;
+             rdfs:range :Perception .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/sfContains
@@ -281,198 +281,29 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                                                      skos:prefLabel "Spatial Object"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Accountability
-:Accountability rdf:type owl:Class ;
-                rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Attitude
-:Attitude rdf:type owl:Class ;
-          rdfs:subClassOf :Population .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Benefits
-:Benefits rdf:type owl:Class ;
-          rdfs:subClassOf :Perception .
-
-
-###  http://www.semanticweb.org/diversify-ccam#CCAM
-:CCAM rdf:type owl:Class ;
-      rdfs:subClassOf :TransportSystem .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Car
-:Car rdf:type owl:Class ;
-     rdfs:subClassOf :PrivateTransport .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Ciclying
-:Ciclying rdf:type owl:Class ;
-          rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#CulturalThing
-:CulturalThing rdf:type owl:Class ;
-               rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Culture
-:Culture rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Driver
-:Driver rdf:type owl:Class ;
-        rdfs:subClassOf :Trust .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Effectiveness
-:Effectiveness rdf:type owl:Class ;
-               rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Fairness
-:Fairness rdf:type owl:Class ;
-          rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#GreenInitiatives
-:GreenInitiatives rdf:type owl:Class ;
-                  rdfs:subClassOf :Sustainability .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Identity
-:Identity rdf:type owl:Class ;
-          rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Inclusivity
-:Inclusivity rdf:type owl:Class ;
-             rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Innovation
-:Innovation rdf:type owl:Class ;
-            rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Integrity
-:Integrity rdf:type owl:Class ;
-           rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Intermodality
-:Intermodality rdf:type owl:Class ;
-               rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Mobility
-:Mobility rdf:type owl:Class ;
-          rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#NewMobilityOptions
-:NewMobilityOptions rdf:type owl:Class ;
-                    rdfs:subClassOf :Innovation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#NewTechnologies
-:NewTechnologies rdf:type owl:Class ;
-                 rdfs:subClassOf :Innovation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PerceivedMeasurement
-:PerceivedMeasurement rdf:type owl:Class ;
-                      rdfs:subClassOf :Perception .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Perception
-:Perception rdf:type owl:Class ;
-            rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PolicyRules
-:PolicyRules rdf:type owl:Class ;
-             rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Population
-:Population rdf:type owl:Class ;
-            rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PrivateTransport
-:PrivateTransport rdf:type owl:Class ;
-                  rdfs:subClassOf :TransportSystem .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PublicInterest
-:PublicInterest rdf:type owl:Class ;
-                rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PublicTransport
-:PublicTransport rdf:type owl:Class ;
-                 rdfs:subClassOf :TransportSystem .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Reliability
-:Reliability rdf:type owl:Class ;
-             rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Risks
-:Risks rdf:type owl:Class ;
-       rdfs:subClassOf :Perception .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Safety
-:Safety rdf:type owl:Class ;
-        rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Satisfaction
-:Satisfaction rdf:type owl:Class ;
-              rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Sustainability
-:Sustainability rdf:type owl:Class ;
-                rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Transparency
-:Transparency rdf:type owl:Class ;
-              rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#TransportSystem
-:TransportSystem rdf:type owl:Class ;
-                 rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Trust
-:Trust rdf:type owl:Class ;
-       rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Value
-:Value rdf:type owl:Class ;
-       rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Walking
-:Walking rdf:type owl:Class ;
-         rdfs:subClassOf :Mobility .
-
-
 ###  http://www.semanticweb.org/diversify-ccam#Adherence/UserPreference
 <http://www.semanticweb.org/diversify-ccam#Adherence/UserPreference> rdf:type owl:Class ;
                                                                      rdfs:subClassOf :Attitude .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Accountability
+:Accountability rdf:type owl:Class ;
+                rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/AnimalPopulation
 :AnimalPopulation rdf:type owl:Class ;
                   rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Attitude
+:Attitude rdf:type owl:Class ;
+          rdfs:subClassOf :Population .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Benefits
+:Benefits rdf:type owl:Class ;
+          rdfs:subClassOf :Perception .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/BuiltEnvironment
@@ -481,9 +312,33 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                   owl:disjointWith :NaturalEnvironment .
 
 
+###  http://www.semanticweb.org/diversify-ccam/CCAM
+:CCAM rdf:type owl:Class ;
+      rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Car
+:Car rdf:type owl:Class ;
+     rdfs:subClassOf :PrivateTransport .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Ciclying
+:Ciclying rdf:type owl:Class ;
+          rdfs:subClassOf :Mobility .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Climate
 :Climate rdf:type owl:Class ;
          rdfs:subClassOf :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/CulturalThing
+:CulturalThing rdf:type owl:Class ;
+               rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Culture
+:Culture rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/CyclingInfrastructure
@@ -497,14 +352,29 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                        owl:disjointWith :TransportInfrastructure .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Driver
+:Driver rdf:type owl:Class ;
+        rdfs:subClassOf :Trust .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Ecosystem
 :Ecosystem rdf:type owl:Class ;
            rdfs:subClassOf :NaturalEnvironment .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Effectiveness
+:Effectiveness rdf:type owl:Class ;
+               rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Environment
 :Environment rdf:type owl:Class ;
              rdfs:subClassOf :Geography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Fairness
+:Fairness rdf:type owl:Class ;
+          rdfs:subClassOf :Driver .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Fog
@@ -514,6 +384,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Geography
 :Geography rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/GreenInitiatives
+:GreenInitiatives rdf:type owl:Class ;
+                  rdfs:subClassOf :Sustainability .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Hill
@@ -526,9 +401,34 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                  rdfs:subClassOf :Population .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Identity
+:Identity rdf:type owl:Class ;
+          rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Inclusivity
+:Inclusivity rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Infrastructure
 :Infrastructure rdf:type owl:Class ;
                 rdfs:subClassOf :BuiltEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Innovation
+:Innovation rdf:type owl:Class ;
+            rdfs:subClassOf :CulturalThing .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Integrity
+:Integrity rdf:type owl:Class ;
+           rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Intermodality
+:Intermodality rdf:type owl:Class ;
+               rdfs:subClassOf :Mobility .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/LandUseDevelopment
@@ -542,6 +442,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           owl:disjointWith :WaterBody .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Mobility
+:Mobility rdf:type owl:Class ;
+          rdfs:subClassOf :CulturalThing .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Morphology
 :Morphology rdf:type owl:Class ;
             rdfs:subClassOf :BuiltEnvironment .
@@ -552,9 +457,29 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                     rdfs:subClassOf :Environment .
 
 
+###  http://www.semanticweb.org/diversify-ccam/NewMobilityOptions
+:NewMobilityOptions rdf:type owl:Class ;
+                    rdfs:subClassOf :Innovation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/NewTechnologies
+:NewTechnologies rdf:type owl:Class ;
+                 rdfs:subClassOf :Innovation .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/PedestrianInfrastructure
 :PedestrianInfrastructure rdf:type owl:Class ;
                           rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PerceivedMeasurement
+:PerceivedMeasurement rdf:type owl:Class ;
+                      rdfs:subClassOf :Perception .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Perception
+:Perception rdf:type owl:Class ;
+            rdfs:subClassOf :Attitude .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/PlantPopulation
@@ -562,9 +487,15 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                  rdfs:subClassOf :Population .
 
 
+###  http://www.semanticweb.org/diversify-ccam/PolicyRules
+:PolicyRules rdf:type owl:Class ;
+             rdfs:subClassOf :CulturalThing .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Population
 :Population rdf:type owl:Class ;
-            rdfs:subClassOf :Geography .
+            rdfs:subClassOf :Culture ,
+                            :Geography .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Precipitation
@@ -573,9 +504,34 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                owl:disjointWith :Wind .
 
 
+###  http://www.semanticweb.org/diversify-ccam/PrivateTransport
+:PrivateTransport rdf:type owl:Class ;
+                  rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PublicInterest
+:PublicInterest rdf:type owl:Class ;
+                rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PublicTransport
+:PublicTransport rdf:type owl:Class ;
+                 rdfs:subClassOf :TransportSystem .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Rain
 :Rain rdf:type owl:Class ;
       rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Reliability
+:Reliability rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Risks
+:Risks rdf:type owl:Class ;
+       rdfs:subClassOf :Perception .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/River
@@ -586,6 +542,16 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
 :RoadInfrastructure rdf:type owl:Class ;
                     rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Safety
+:Safety rdf:type owl:Class ;
+        rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Satisfaction
+:Satisfaction rdf:type owl:Class ;
+              rdfs:subClassOf :Attitude .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Settlement
@@ -603,9 +569,19 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
       rdfs:subClassOf :Precipitation .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Sustainability
+:Sustainability rdf:type owl:Class ;
+                rdfs:subClassOf :CulturalThing .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Topography
 :Topography rdf:type owl:Class ;
             rdfs:subClassOf :NaturalEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Transparency
+:Transparency rdf:type owl:Class ;
+              rdfs:subClassOf :Driver .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/TransportInfrastructure
@@ -613,9 +589,29 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                          rdfs:subClassOf :Infrastructure .
 
 
+###  http://www.semanticweb.org/diversify-ccam/TransportSystem
+:TransportSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Mobility .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Trust
+:Trust rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/UrbanMakeup
 :UrbanMakeup rdf:type owl:Class ;
              rdfs:subClassOf :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Value
+:Value rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Walking
+:Walking rdf:type owl:Class ;
+         rdfs:subClassOf :Mobility .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/WaterBody
