@@ -79,6 +79,24 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#hasClimate
+:hasClimate rdf:type owl:ObjectProperty ;
+            rdfs:domain :NaturalEnvironment ;
+            rdfs:range :Climate .
+
+
+###  http://www.semanticweb.org/diversify-ccam#hasEcosystem
+:hasEcosystem rdf:type owl:ObjectProperty ;
+              rdfs:domain :NaturalEnvironment ;
+              rdfs:range :Ecosystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam#hasTopography
+:hasTopography rdf:type owl:ObjectProperty ;
+               rdfs:domain :NaturalEnvironment ;
+               rdfs:range :Topography .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/attituteTowards
 :attituteTowards rdf:type owl:ObjectProperty ;
                  rdfs:domain :Attitude ;
@@ -330,7 +348,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Climate
 :Climate rdf:type owl:Class ;
-         rdfs:subClassOf :NaturalEnvironment .
+         rdfs:subClassOf :Geography .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/CulturalThing
@@ -360,7 +378,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Ecosystem
 :Ecosystem rdf:type owl:Class ;
-           rdfs:subClassOf :NaturalEnvironment .
+           rdfs:subClassOf :Geography .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Effectiveness
@@ -577,7 +595,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Topography
 :Topography rdf:type owl:Class ;
-            rdfs:subClassOf :NaturalEnvironment .
+            rdfs:subClassOf :Geography .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Transparency
