@@ -79,6 +79,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#bridgesOver
+:bridgesOver rdf:type owl:ObjectProperty ;
+             rdfs:domain :Bridge ;
+             rdfs:range :WaterBody .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#hasClimate
 :hasClimate rdf:type owl:ObjectProperty ;
             rdfs:domain :NaturalEnvironment ;
@@ -101,6 +107,18 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 :hasTopography rdf:type owl:ObjectProperty ;
                rdfs:domain :NaturalEnvironment ;
                rdfs:range :Topography .
+
+
+###  http://www.semanticweb.org/diversify-ccam#sharesInfrastructure
+:sharesInfrastructure rdf:type owl:ObjectProperty ;
+                      rdfs:domain :TransportInfrastructure ;
+                      rdfs:range :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#tunnelsThrough
+:tunnelsThrough rdf:type owl:ObjectProperty ;
+                rdfs:domain :Tunnel ;
+                rdfs:range :Landform .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/attituteTowards
@@ -304,6 +322,36 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                                                                   <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.1.2> ;
                                                      skos:note "Subclasses of this class are expected to be used for instance data."@en ;
                                                      skos:prefLabel "Spatial Object"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Bridge
+:Bridge rdf:type owl:Class ;
+        rdfs:subClassOf :RoadInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#EVChargingStation
+:EVChargingStation rdf:type owl:Class ;
+                   rdfs:subClassOf :DigitalInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Intersection
+:Intersection rdf:type owl:Class ;
+              rdfs:subClassOf :RoadInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#RoadInfrastructure
+:RoadInfrastructure rdf:type owl:Class ;
+                    rdfs:subClassOf :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#TelecommunicationInfrastructure
+:TelecommunicationInfrastructure rdf:type owl:Class ;
+                                 rdfs:subClassOf :DigitalInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Tunnel
+:Tunnel rdf:type owl:Class ;
+        rdfs:subClassOf :RoadInfrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Adherence/UserPreference
@@ -564,11 +612,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
        rdfs:subClassOf :WaterBody .
 
 
-###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
-:RoadInfrastructure rdf:type owl:Class ;
-                    rdfs:subClassOf :TransportInfrastructure .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Safety
 :Safety rdf:type owl:Class ;
         rdfs:subClassOf :Driver .
@@ -657,6 +700,22 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Bridge
+                :Intersection
+                :Tunnel
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :RoadInfrastructure
+                :DigitalInfrastructure
+                :TransportInfrastructure
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AnimalPopulation
