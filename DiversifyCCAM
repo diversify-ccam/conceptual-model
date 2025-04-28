@@ -12,6 +12,7 @@
 @base <http://www.semanticweb.org/diversify-ccam/> .
 
 <http://www.semanticweb.org/diversify-ccam> rdf:type owl:Ontology ;
+                                             owl:imports <https://bimerr.iot.linkeddata.es/def/weather> ;
                                              rdfs:comment "This is version v0.1 of the DiversifyCCAM comceptual model." .
 
 #################################################################
