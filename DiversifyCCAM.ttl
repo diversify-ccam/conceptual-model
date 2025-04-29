@@ -80,10 +80,8 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#existsIn
-:existsIn rdf:type owl:ObjectProperty ;
-          rdfs:domain :BuiltEnvironment ;
-          rdfs:range :NaturalEnvironment .
+###  http://www.semanticweb.org/diversify-ccam#usesInfrastructure
+:usesInfrastructure rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/attituteTowards
@@ -111,6 +109,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:domain :Perception ;
             rdfs:range :Benefits ,
                        :Risks .
+
+
+###  http://www.semanticweb.org/diversify-ccam/existsIn
+:existsIn rdf:type owl:ObjectProperty ;
+          rdfs:domain :BuiltEnvironment ;
+          rdfs:range :NaturalEnvironment .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasAttitude
@@ -345,8 +349,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/DigitalInfrastructure
 :DigitalInfrastructure rdf:type owl:Class ;
-                       rdfs:subClassOf :Infrastructure ;
-                       owl:disjointWith :TransportInfrastructure .
+                       rdfs:subClassOf :Infrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Driver
@@ -603,7 +606,8 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/TransportSystem
 :TransportSystem rdf:type owl:Class ;
-                 rdfs:subClassOf :Mobility .
+                 rdfs:subClassOf :Infrastructure ,
+                                 :Mobility .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Trust
@@ -670,14 +674,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
   owl:members ( :Climate
                 :Ecosystem
                 :Topography
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DigitalInfrastructure
-                :RoadInfrastructure
-                :TransportInfrastructure
               )
 ] .
 
