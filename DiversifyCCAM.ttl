@@ -270,159 +270,32 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                                                      skos:prefLabel "Spatial Object"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Accountability
+###  http://www.semanticweb.org/diversify-ccam/Accountability
 :Accountability rdf:type owl:Class ;
                 rdfs:subClassOf :Driver .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Adherence
+###  http://www.semanticweb.org/diversify-ccam/Adherence
 :Adherence rdf:type owl:Class ;
-           rdfs:subClassOf :Attitude .
+           rdfs:subClassOf :Attitude ;
+           rdfs:label "Adherence" ;
+           skos:definition "The conscious and voluntary commitment to follow, uphold, or respect certain principles, values, norms, or practices, often within a cultural, ethical, or educational framework." .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Attitude
+###  http://www.semanticweb.org/diversify-ccam/Attitude
 :Attitude rdf:type owl:Class ;
-          rdfs:subClassOf :Culture .
+          rdfs:subClassOf :Culture ;
+          terms:source "UNESCO" ;
+          rdfs:label "Attitude" ;
+          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity." .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Benefits
+###  http://www.semanticweb.org/diversify-ccam/Benefits
 :Benefits rdf:type owl:Class ;
-          rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#CulturalThing
-:CulturalThing rdf:type owl:Class ;
-               rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Cycling
-:Cycling rdf:type owl:Class ;
-         rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Driver
-:Driver rdf:type owl:Class ;
-        rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Effectiveness
-:Effectiveness rdf:type owl:Class ;
-               rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Fairness
-:Fairness rdf:type owl:Class ;
-          rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#GreenInitiatives
-:GreenInitiatives rdf:type owl:Class ;
-                  rdfs:subClassOf :Sustainability .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Identity
-:Identity rdf:type owl:Class ;
-          rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Inclusivity
-:Inclusivity rdf:type owl:Class ;
-             rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Innovation
-:Innovation rdf:type owl:Class ;
-            rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Integrity
-:Integrity rdf:type owl:Class ;
-           rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Intermodality
-:Intermodality rdf:type owl:Class ;
-               rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Mobility
-:Mobility rdf:type owl:Class ;
-          rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#NewMobilityOptions
-:NewMobilityOptions rdf:type owl:Class ;
-                    rdfs:subClassOf :Innovation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#NewTechnologies
-:NewTechnologies rdf:type owl:Class ;
-                 rdfs:subClassOf :Innovation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PerceivedMeasurement
-:PerceivedMeasurement rdf:type owl:Class ;
-                      rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Perception
-:Perception rdf:type owl:Class ;
-            rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PolicyRules
-:PolicyRules rdf:type owl:Class ;
-             rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PublicInterest
-:PublicInterest rdf:type owl:Class ;
-                rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Reliability
-:Reliability rdf:type owl:Class ;
-             rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Risks
-:Risks rdf:type owl:Class ;
-       rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Safety
-:Safety rdf:type owl:Class ;
-        rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Satisfaction
-:Satisfaction rdf:type owl:Class ;
-              rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Sustainability
-:Sustainability rdf:type owl:Class ;
-                rdfs:subClassOf :CulturalThing .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Transparency
-:Transparency rdf:type owl:Class ;
-              rdfs:subClassOf :Driver .
-
-
-###  http://www.semanticweb.org/diversify-ccam#TransportSystem
-:TransportSystem rdf:type owl:Class ;
-                 rdfs:subClassOf :Mobility .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Trust
-:Trust rdf:type owl:Class ;
-       rdfs:subClassOf :Attitude .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Walking
-:Walking rdf:type owl:Class ;
-         rdfs:subClassOf :Mobility .
+          rdfs:subClassOf :Culture ;
+          terms:source "UNESCO" ;
+          rdfs:label "Benefits" ;
+          skos:definition "Tangible or intangible rewards that individuals or groups receive through access to opportunities, resources, or services in areas such as culture, education, or innovation." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Bridge
@@ -441,8 +314,26 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
          rdfs:subClassOf :Geography .
 
 
+###  http://www.semanticweb.org/diversify-ccam/CulturalThing
+:CulturalThing rdf:type owl:Class ;
+               rdfs:subClassOf :Culture ;
+               rdfs:label "Cultural Thing" ;
+               skos:definition "Any concept that embodies, expresses, or represents the cultural identity, heritage, or creativity of a community." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Culture
-:Culture rdf:type owl:Class .
+:Culture rdf:type owl:Class ;
+         terms:source "UNESCO" ;
+         rdfs:label "Culture" ;
+         skos:definition "Culture should be regarded as the set of distinctive spiritual, material, intellectual and emotional features of society or a social group... it encompasses, in addition to art and literature, lifestyles, ways of living together, value systems, traditions and beliefs." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Cycling
+:Cycling rdf:type owl:Class ;
+         rdfs:subClassOf :Mobility ;
+         terms:source "UNESCO" ;
+         rdfs:label "Cycling" ;
+         skos:definition "The use of bicycles as a mode of transportation, recreation, or physical activity, often promoted in urban planning for its role in reducing emissions, enhancing public health, and supporting inclusive access." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/CyclingInfrastructure
@@ -455,6 +346,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                        rdfs:subClassOf :Infrastructure .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Driver
+:Driver rdf:type owl:Class ;
+        rdfs:subClassOf :Culture .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/EVChargingStation
 :EVChargingStation rdf:type owl:Class ;
                    rdfs:subClassOf :DigitalInfrastructure .
@@ -465,9 +361,19 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
            rdfs:subClassOf :Geography .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Effectiveness
+:Effectiveness rdf:type owl:Class ;
+               rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Environment
 :Environment rdf:type owl:Class ;
              rdfs:subClassOf :Geography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Fairness
+:Fairness rdf:type owl:Class ;
+          rdfs:subClassOf :Driver .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Fog
@@ -479,14 +385,55 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 :Geography rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/diversify-ccam/GreenInitiatives
+:GreenInitiatives rdf:type owl:Class ;
+                  rdfs:subClassOf :Sustainability ;
+                  terms:source "UNESCO" ;
+                  rdfs:label "Green Initiatives" ;
+                  skos:definition "Programs, projects, or actions aimed at promoting environmental sustainability, to advance ecological protection, climate action, and sustainable development." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Hill
 :Hill rdf:type owl:Class ;
       rdfs:subClassOf :Landform .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Identity
+:Identity rdf:type owl:Class ;
+          rdfs:subClassOf :Attitude ;
+          rdfs:label "Identity" ;
+          skos:definition "The set of characteristics, values, affiliations, and experiences that define an individual or group, often shaped by culture, history, language, and social context." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Inclusivity
+:Inclusivity rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Infrastructure
 :Infrastructure rdf:type owl:Class ;
                 rdfs:subClassOf :BuiltEnvironment .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Innovation
+:Innovation rdf:type owl:Class ;
+            rdfs:subClassOf :CulturalThing ;
+            terms:source "UNESCO" ;
+            rdfs:label "Innovation" ;
+            skos:definition "The introduction and application of new or significantly improved ideas, products, services, or processes that enhance sustainability, inclusion, or development outcomes." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Integrity
+:Integrity rdf:type owl:Class ;
+           rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Intermodality
+:Intermodality rdf:type owl:Class ;
+               rdfs:subClassOf :Mobility ;
+               terms:source "UNESCO" ;
+               rdfs:label "Intermodality" ;
+               skos:definition "A transport strategy that integrates different mobility modes into a connected network, enabling users to switch between them easily and promoting sustainable, inclusive urban mobility." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Intersection
@@ -505,6 +452,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           owl:disjointWith :WaterBody .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Mobility
+:Mobility rdf:type owl:Class ;
+          rdfs:subClassOf :CulturalThing ;
+          terms:source "UNESCO" ;
+          rdfs:label "Mobility" ;
+          skos:definition "The capacity and means for individuals and communities to access places, opportunities, and services through various modes of transport or communication, with attention to sustainability, equity, and resilience." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Morphology
 :Morphology rdf:type owl:Class ;
             rdfs:subClassOf :Geography .
@@ -515,9 +470,43 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                     rdfs:subClassOf :Environment .
 
 
+###  http://www.semanticweb.org/diversify-ccam/NewMobilityOptions
+:NewMobilityOptions rdf:type owl:Class ;
+                    rdfs:subClassOf :Innovation ;
+                    terms:source "UNESCO" ;
+                    rdfs:label "New Mobility Options" ;
+                    skos:definition "Transport solutions that go beyond traditional private car use, including shared, electric, autonomous, or multimodal options designed to reduce environmental impact and improve urban accessibility." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/NewTechnologies
+:NewTechnologies rdf:type owl:Class ;
+                 rdfs:subClassOf :Innovation ;
+                 terms:source "UNESCO" ;
+                 rdfs:label "New Tchnologies" ;
+                 skos:definition "Innovative tools, systems, or methods—Possibly aiming at helping sustainability objectives—that enable transformative change across sectors such as energy, transport, education, health, and governance." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/PedestrianInfrastructure
 :PedestrianInfrastructure rdf:type owl:Class ;
                           rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PerceivedMeasurement
+:PerceivedMeasurement rdf:type owl:Class ;
+                      rdfs:subClassOf :Culture .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Perception
+:Perception rdf:type owl:Class ;
+            rdfs:subClassOf :Culture .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PolicyRules
+:PolicyRules rdf:type owl:Class ;
+             rdfs:subClassOf :CulturalThing ;
+             terms:source "UNESCO" ;
+             rdfs:label "Policy Rules" ;
+             skos:definition "A set of rules or frameworks designed to govern actions and outcomes within public administration, organizations, or communities, supporting sustainable development and inclusive governance." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Precipitation
@@ -526,9 +515,24 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                owl:disjointWith :Wind .
 
 
+###  http://www.semanticweb.org/diversify-ccam/PublicInterest
+:PublicInterest rdf:type owl:Class ;
+                rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Rain
 :Rain rdf:type owl:Class ;
       rdfs:subClassOf :Precipitation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Reliability
+:Reliability rdf:type owl:Class ;
+             rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Risks
+:Risks rdf:type owl:Class ;
+       rdfs:subClassOf :Culture .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/River
@@ -539,6 +543,19 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
 :RoadInfrastructure rdf:type owl:Class ;
                     rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Safety
+:Safety rdf:type owl:Class ;
+        rdfs:subClassOf :Driver .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Satisfaction
+:Satisfaction rdf:type owl:Class ;
+              rdfs:subClassOf :Attitude ;
+              terms:source "UNESCO" ;
+              rdfs:label "Satisfaction" ;
+              skos:definition "The perceived degree to which personal or collective expectations related to cultural engagement, education, or life quality are met." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Settlement
@@ -556,6 +573,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
       rdfs:subClassOf :Precipitation .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Sustainability
+:Sustainability rdf:type owl:Class ;
+                rdfs:subClassOf :CulturalThing ;
+                terms:source "UNESCO" ;
+                rdfs:label "Sustainability" ;
+                skos:definition "A holistic approach to development and resource management that balances ecological health, social well-being, cultural diversity, and economic progress to ensure long-term resilience and quality of life." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/TelecommunicationInfrastructure
 :TelecommunicationInfrastructure rdf:type owl:Class ;
                                  rdfs:subClassOf :DigitalInfrastructure .
@@ -566,9 +591,30 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :Geography .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Transparency
+:Transparency rdf:type owl:Class ;
+              rdfs:subClassOf :Driver .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/TransportInfrastructure
 :TransportInfrastructure rdf:type owl:Class ;
                          rdfs:subClassOf :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/TransportSystem
+:TransportSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Mobility ;
+                 terms:source "UNESCO" ;
+                 rdfs:label "Transport System" ;
+                 skos:definition "An organized network of infrastructure, vehicles, technologies, and services that enables the movement of people and goods within and across regions, supporting economic activity, social inclusion, and environmental sustainability." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Trust
+:Trust rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude ;
+       terms:source "UNESCO" ;
+       rdfs:label "Trust" ;
+       skos:definition "The degree to which individuals or communities perceive institutions as legitimate, transparent, accountable, and serving the public good." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Tunnel
@@ -579,6 +625,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/UrbanMakeup
 :UrbanMakeup rdf:type owl:Class ;
              rdfs:subClassOf :Morphology .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Walking
+:Walking rdf:type owl:Class ;
+         rdfs:subClassOf :Mobility ;
+         terms:source "UNESCO" ;
+         rdfs:label "Walking" ;
+         skos:definition "The act of moving by foot as a mode of transport or physical activity, promoting sustainable, healthy, and accessible communities." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/WaterBody
