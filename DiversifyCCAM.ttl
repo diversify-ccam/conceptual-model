@@ -640,7 +640,6 @@ and
 ###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
 :RoadInfrastructure rdf:type owl:Class ;
                     rdfs:subClassOf :TransportInfrastructure ;
-                    terms:source "https://www.ptvgroup.com/en-us/application-areas/road-infrastructure-planning" ;
                     rdfs:label "Road Infrustructure"@en ;
                     skos:definition "Physical structures and facilities constituting the road network, including roads, bridges, tunnels, signage, and drainage systems."@en .
 
@@ -781,7 +780,7 @@ and
 ###  http://www.semanticweb.org/diversify-ccam/Wind
 :Wind rdf:type owl:Class ;
       rdfs:subClassOf :WeatherEvent ;
-      terms:source "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0060?utm_source=chatgpt.com"@en ;
+      terms:source "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0060"@en ;
       rdfs:label "Wind"@en ;
       skos:definition "Air motion relative to the Earth's surface. Unless otherwise specified, only the horizontal component is considered"@en .
 
