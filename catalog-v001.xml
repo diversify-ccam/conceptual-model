@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://saref.etsi.org/saref4city/v2.1.1/" uri="external-ontologies/saref4city.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql/1.1" uri="external-ontologies/ogc-geosparql.ttl"/>
     <uri id="Imports Wizard Entry" name="https://bimerr.iot.linkeddata.es/def/weather" uri="external-ontologies/BIMERR-weather.ttl"/>
     <uri id="Imports Wizard Entry" name="https://bimerr.iot.linkeddata.es/def/weather" uri="external-ontologies/BIMERR-weather.ttl"/>
