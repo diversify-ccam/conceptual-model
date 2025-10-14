@@ -13,7 +13,8 @@
 
 <http://www.semanticweb.org/diversify-ccam> rdf:type owl:Ontology ;
                                              owl:imports <http://www.opengis.net/ont/geosparql/1.1> ,
-                                                         <https://bimerr.iot.linkeddata.es/def/weather> ;
+                                                         <https://bimerr.iot.linkeddata.es/def/weather> ,
+                                                         <https://saref.etsi.org/saref4city/v2.1.1/> ;
                                              rdfs:comment "This is version v0.1 of the DiversifyCCAM comceptual model." .
 
 #################################################################
@@ -80,40 +81,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#hasBelief
-:hasBelief rdf:type owl:ObjectProperty ;
-           rdfs:domain :Culture ;
-           rdfs:range :Beliefs .
-
-
-###  http://www.semanticweb.org/diversify-ccam#hasValue
-:hasValue rdf:type owl:ObjectProperty ;
-          rdfs:domain :Culture ;
-          rdfs:range :Value .
-
-
-###  http://www.semanticweb.org/diversify-ccam#refersTo
-:refersTo rdf:type owl:ObjectProperty ;
-          rdfs:domain :Culture ;
-          rdfs:range :Cultural_Entity .
-
-
-###  http://www.semanticweb.org/diversify-ccam/attituteTowards
-:attituteTowards rdf:type owl:ObjectProperty .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/bridgesOver
 :bridgesOver rdf:type owl:ObjectProperty ;
              rdfs:domain :Bridge ;
              rdfs:range :WaterBody .
-
-
-###  http://www.semanticweb.org/diversify-ccam/canBeBoth
-:canBeBoth rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/consistsOf
-:consistsOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/existsIn
@@ -124,6 +95,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/hasAttitude
 :hasAttitude rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasBelief
+:hasBelief rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Beliefs .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasClimate
@@ -157,8 +134,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/hasMorphology
 :hasMorphology rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ,
-                           :BuiltEnvironment ;
+               rdfs:domain :BuiltEnvironment ;
                rdfs:range :Morphology .
 
 
@@ -170,13 +146,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/hasTopography
 :hasTopography rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ,
-                           :NaturalEnvironment ;
+               rdfs:domain :NaturalEnvironment ;
                rdfs:range :Topography .
 
 
-###  http://www.semanticweb.org/diversify-ccam/influences
-:influences rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/diversify-ccam/hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :Value .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/isDrivenBy
@@ -184,12 +161,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:domain :Trust .
 
 
-###  http://www.semanticweb.org/diversify-ccam/isMeasuredBy
-:isMeasuredBy rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/motivatedBy
-:motivatedBy rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/diversify-ccam/refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :Cultural_Entity .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/sharesInfrastructure
@@ -212,55 +187,55 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#depth
+###  http://www.semanticweb.org/diversify-ccam/depth
 :depth rdf:type owl:DatatypeProperty ;
        rdfs:domain :Leadership ;
        rdfs:range xsd:int ;
        rdfs:label "depth"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#easeOfProcess
+###  http://www.semanticweb.org/diversify-ccam/easeOfProcess
 :easeOfProcess rdf:type owl:DatatypeProperty ;
                rdfs:domain :Bureaucracy ;
                rdfs:range xsd:string ;
                rdfs:label "ease of process"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#faultTolerance
+###  http://www.semanticweb.org/diversify-ccam/faultTolerance
 :faultTolerance rdf:type owl:DatatypeProperty ;
                 rdfs:domain :PlanningCulture ;
                 rdfs:range xsd:string ;
                 rdfs:label "fault tolerance"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#interregionalCooperation
+###  http://www.semanticweb.org/diversify-ccam/interregionalCooperation
 :interregionalCooperation rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Federalism ;
                           rdfs:label "interregional cooperation"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#nrOfStakeholders
+###  http://www.semanticweb.org/diversify-ccam/nrOfStakeholders
 :nrOfStakeholders rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Bureaucracy ;
                   rdfs:range xsd:int ;
                   rdfs:label "nr of stakeholders"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#riskAversion
+###  http://www.semanticweb.org/diversify-ccam/riskAversion
 :riskAversion rdf:type owl:DatatypeProperty ;
               rdfs:domain :PlanningCulture ;
               rdfs:range xsd:string ;
               rdfs:label "risk aversion"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#riskOfBlockage
+###  http://www.semanticweb.org/diversify-ccam/riskOfBlockage
 :riskOfBlockage rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Bureaucracy ;
                 rdfs:range xsd:string ;
                 rdfs:label "risk of blockage"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#term
+###  http://www.semanticweb.org/diversify-ccam/term
 :term rdf:type owl:DatatypeProperty ;
       rdfs:domain :PlanningCulture ;
       rdfs:range xsd:string ;
@@ -271,139 +246,38 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://www.opengis.net/ont/geosparql#Feature
-<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
-                                               rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
-                                                                <http://www.opengis.net/spec/geosparql/1.0/req/core/feature-class> ,
-                                                                <http://www.opengis.net/spec/geosparql/1.1/req/core/feature-class> ;
-                                               skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.1> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.2> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.3> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.4> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.5> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.6> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.7> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.8> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.9> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.2> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.3> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.2> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.3> ,
-                                                            <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.4> ;
-                                               skos:note "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en .
+###  http://www.semanticweb.org/diversify-ccam#AnimalPopulation
+:AnimalPopulation rdf:type owl:Class ;
+                  rdfs:subClassOf :Population .
 
 
-###  http://www.opengis.net/ont/geosparql#Geometry
-<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
-                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
-                                                                 <http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-class> ,
-                                                                 <http://www.opengis.net/spec/geosparql/1.1/req/geometry-extension/geometry-class> ;
-                                                skos:definition "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
-                                                skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.2> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.3> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.4> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.5> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.6> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.2.8> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.1> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.2> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.3.3> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.2> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.3> ,
-                                                             <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.2.4> ;
-                                                skos:note "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en ;
-                                                skos:prefLabel "Geometry"@en .
+###  http://www.semanticweb.org/diversify-ccam#HumanPopulation
+:HumanPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
 
 
-###  http://www.opengis.net/ont/geosparql#SpatialObject
-<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
-                                                     rdfs:subClassOf :Geography ;
-                                                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ,
-                                                                      <http://www.opengis.net/spec/geosparql/1.0/req/core/spatial-object-class> ,
-                                                                      <http://www.opengis.net/spec/geosparql/1.1/req/core/spatial-object-class> ;
-                                                     skos:definition "Anything spatial (being or having a shape, position or an extent)."@en ;
-                                                     skos:example <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.1.1> ,
-                                                                  <http://www.opengis.net/spec/geosparql/1.1/specification.html#C.1.1.1.2> ;
-                                                     skos:note "Subclasses of this class are expected to be used for instance data."@en ;
-                                                     skos:prefLabel "Spatial Object"@en .
+###  http://www.semanticweb.org/diversify-ccam#PlantPopulation
+:PlantPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Attitude
-:Attitude rdf:type owl:Class ;
-          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
-          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
+###  http://www.semanticweb.org/diversify-ccam#Population
+:Population rdf:type owl:Class ;
+            rdfs:subClassOf :Geography .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Beliefs
-:Beliefs rdf:type owl:Class ;
-         rdfs:subClassOf :Culture .
+###  http://www.semanticweb.org/diversify-ccam#PrivateSystem
+:PrivateSystem rdf:type owl:Class ;
+               rdfs:subClassOf :TransportSystem .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Bureaucracy
-:Bureaucracy rdf:type owl:Class ;
-             rdfs:subClassOf :GovernanceCulture ;
-             rdfs:label "Bureaucracy"@en .
+###  http://www.semanticweb.org/diversify-ccam#PublicSystem
+:PublicSystem rdf:type owl:Class ;
+              rdfs:subClassOf :TransportSystem .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Cultural_Entity
-:Cultural_Entity rdf:type owl:Class ;
-                 rdfs:subClassOf :Culture ;
-                 rdfs:label "Cultural Entity"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Federalism
-:Federalism rdf:type owl:Class ;
-            rdfs:subClassOf :GovernanceCulture ;
-            rdfs:label "Federalism"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam#GovernanceCulture
-:GovernanceCulture rdf:type owl:Class ;
-                   rdfs:label "Governance Culture"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Language
-:Language rdf:type owl:Class ;
-          rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Law
-:Law rdf:type owl:Class ;
-     rdfs:subClassOf :Norms .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Leadership
-:Leadership rdf:type owl:Class ;
-            rdfs:subClassOf :GovernanceCulture ;
-            rdfs:label "Leadership"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Norms
-:Norms rdf:type owl:Class ;
-       rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PlanningCulture
-:PlanningCulture rdf:type owl:Class ;
-                 rdfs:subClassOf :GovernanceCulture ;
-                 rdfs:label "Planning Culture"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Stakeholder
-:Stakeholder rdf:type owl:Class ;
-             rdfs:subClassOf :Norms .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Symbols
-:Symbols rdf:type owl:Class ;
-         rdfs:subClassOf :Culture .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Value
-:Value rdf:type owl:Class ;
-       rdfs:subClassOf :Culture .
+###  http://www.semanticweb.org/diversify-ccam#TransportSystem
+:TransportSystem rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Accessibility/Availability
@@ -429,9 +303,20 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :Policy .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Attitude
+:Attitude rdf:type owl:Class ;
+          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
+          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/AvailabilityOfAccessibilityStrategy
 :AvailabilityOfAccessibilityStrategy rdf:type owl:Class ;
                                      rdfs:subClassOf :availabilityOfStrategy .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Beliefs
+:Beliefs rdf:type owl:Class ;
+         rdfs:subClassOf :Culture .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Bridge
@@ -451,6 +336,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                   skos:definition "Man-made or modified structures that provide people with living, working, and recreational spaces."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Bureaucracy
+:Bureaucracy rdf:type owl:Class ;
+             rdfs:subClassOf :GovernanceCulture ;
+             rdfs:label "Bureaucracy"@en .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Channel
 :Channel rdf:type owl:Class ;
          rdfs:subClassOf :Communication .
@@ -458,7 +349,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Climate
 :Climate rdf:type owl:Class ;
-         rdfs:subClassOf :Geography ;
          rdfs:label "Climate"@en ;
          skos:definition "The prevailing weather conditions in an area over a long period of time."@en .
 
@@ -476,6 +366,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/Context
 :Context rdf:type owl:Class ;
          rdfs:subClassOf :Policy .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Cultural_Entity
+:Cultural_Entity rdf:type owl:Class ;
+                 rdfs:subClassOf :Culture ;
+                 rdfs:label "Cultural Entity"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Culture
@@ -511,7 +407,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Ecosystem
 :Ecosystem rdf:type owl:Class ;
-           rdfs:subClassOf :Geography ;
            rdfs:label "Ecosystem"@en ;
            skos:definition "The complex of a community of organisms and its environment functioning as an ecological unit."@en .
 
@@ -532,6 +427,12 @@ and
         rdfs:subClassOf :societalObjectives .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Federalism
+:Federalism rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Federalism"@en .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Fog
 :Fog rdf:type owl:Class ;
      rdfs:subClassOf :Precipitation ;
@@ -549,6 +450,11 @@ and
 ###  http://www.semanticweb.org/diversify-ccam/Goals
 :Goals rdf:type owl:Class ;
        rdfs:subClassOf :agendaSettings .
+
+
+###  http://www.semanticweb.org/diversify-ccam/GovernanceCulture
+:GovernanceCulture rdf:type owl:Class ;
+                   rdfs:label "Governance Culture"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Hill
@@ -624,6 +530,22 @@ and
           skos:definition "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Language
+:Language rdf:type owl:Class ;
+          rdfs:subClassOf :Culture .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Law
+:Law rdf:type owl:Class ;
+     rdfs:subClassOf :Norms .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Leadership
+:Leadership rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Leadership"@en .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Morphology
 :Morphology rdf:type owl:Class ;
             rdfs:subClassOf :Geography ;
@@ -640,6 +562,11 @@ and
                     skos:definition "An environmental system in which minimal to no anthropisation has occurred and non-human agents are the primary determinants of the system's dynamics and composition."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Norms
+:Norms rdf:type owl:Class ;
+       rdfs:subClassOf :Culture .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Objectives
 :Objectives rdf:type owl:Class ;
             rdfs:subClassOf :Policy .
@@ -651,6 +578,12 @@ and
                           terms:source "https://www.sciencedirect.com/topics/social-sciences/transport-infrastructure" ;
                           rdfs:label "Pedestrian Infrastructure"@en ;
                           skos:definition "Pedestrian infrastructure encompasses the physical elements designed to support safe and convenient walking environments, including sidewalks, crosswalks, pedestrian signals, and traffic calming features."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PlanningCulture
+:PlanningCulture rdf:type owl:Class ;
+                 rdfs:subClassOf :GovernanceCulture ;
+                 rdfs:label "Planning Culture"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Policy
@@ -726,7 +659,8 @@ and
 
 ###  http://www.semanticweb.org/diversify-ccam/Stakeholder
 :Stakeholder rdf:type owl:Class ;
-             rdfs:subClassOf :stakeholderAction .
+             rdfs:subClassOf :Norms ,
+                             :stakeholderAction .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Standardization
@@ -744,6 +678,11 @@ and
            rdfs:subClassOf :resourceAllocation .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Symbols
+:Symbols rdf:type owl:Class ;
+         rdfs:subClassOf :Culture .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/T11.2
 :T11.2 rdf:type owl:Class ;
        rdfs:subClassOf <http://www.semanticweb.org/diversify-ccam#Accessibility/Availability> .
@@ -758,7 +697,6 @@ and
 
 ###  http://www.semanticweb.org/diversify-ccam/Topography
 :Topography rdf:type owl:Class ;
-            rdfs:subClassOf :Geography ;
             terms:source "https://www.merriam-webster.com/dictionary/topography" ;
             rdfs:label "Topography"@en ;
             skos:definition "The configuration of a surface including its relief and the position of its natural and man-made features."@en .
@@ -793,6 +731,11 @@ and
              rdfs:subClassOf :Morphology ;
              rdfs:label "Urban Makeup"@en ;
              skos:definition "The makeup of structures within a built site.  "@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Value
+:Value rdf:type owl:Class ;
+       rdfs:subClassOf :Culture .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/WaterBody
@@ -1118,6 +1061,10 @@ and
 ###  http://www.semanticweb.org/diversify-ccam/willAndMotivation
 :willAndMotivation rdf:type owl:Class ;
                    rdfs:subClassOf :Approaches .
+
+
+###  https://bimerr.iot.linkeddata.es/def/weather#Season
+<https://bimerr.iot.linkeddata.es/def/weather#Season> rdfs:subClassOf :Climate .
 
 
 #################################################################
