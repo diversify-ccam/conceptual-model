@@ -80,10 +80,26 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#hasBelief
+:hasBelief rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Beliefs .
+
+
+###  http://www.semanticweb.org/diversify-ccam#hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :Value .
+
+
+###  http://www.semanticweb.org/diversify-ccam#refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :Cultural_Entity .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/attituteTowards
-:attituteTowards rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Attitude ;
-                 rdfs:range :CulturalThing .
+:attituteTowards rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/bridgesOver
@@ -93,17 +109,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/canBeBoth
-:canBeBoth rdf:type owl:ObjectProperty ;
-           rdfs:domain :Innovation ;
-           rdfs:range :NewTechnologies ,
-                      :Sustainability .
+:canBeBoth rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/consistsOf
-:consistsOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :Perception ;
-            rdfs:range :Benefits ,
-                       :Risks .
+:consistsOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/existsIn
@@ -166,29 +176,20 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/influences
-:influences rdf:type owl:ObjectProperty ;
-            rdfs:domain :Benefits ,
-                        :Risks ;
-            rdfs:range :PerceivedMeasurement .
+:influences rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/isDrivenBy
 :isDrivenBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Trust ;
-            rdfs:range :Driver .
+            rdfs:domain :Trust .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/isMeasuredBy
-:isMeasuredBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :Driver ,
-                          :Perception ;
-              rdfs:range :PerceivedMeasurement .
+:isMeasuredBy rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/motivatedBy
-:motivatedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain :Attitude ;
-             rdfs:range :Perception .
+:motivatedBy rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/sharesInfrastructure
@@ -205,6 +206,65 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/usesInfrastructure
 :usesInfrastructure rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam#depth
+:depth rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Leadership ;
+       rdfs:range xsd:int ;
+       rdfs:label "depth"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#easeOfProcess
+:easeOfProcess rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Bureaucracy ;
+               rdfs:range xsd:string ;
+               rdfs:label "ease of process"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#faultTolerance
+:faultTolerance rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PlanningCulture ;
+                rdfs:range xsd:string ;
+                rdfs:label "fault tolerance"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#interregionalCooperation
+:interregionalCooperation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Federalism ;
+                          rdfs:label "interregional cooperation"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#nrOfStakeholders
+:nrOfStakeholders rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Bureaucracy ;
+                  rdfs:range xsd:int ;
+                  rdfs:label "nr of stakeholders"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#riskAversion
+:riskAversion rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PlanningCulture ;
+              rdfs:range xsd:string ;
+              rdfs:label "risk aversion"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#riskOfBlockage
+:riskOfBlockage rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Bureaucracy ;
+                rdfs:range xsd:string ;
+                rdfs:label "risk of blockage"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam#term
+:term rdf:type owl:DatatypeProperty ;
+      rdfs:domain :PlanningCulture ;
+      rdfs:range xsd:string ;
+      rdfs:label "term"@en .
 
 
 #################################################################
@@ -270,314 +330,80 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                                                      skos:prefLabel "Spatial Object"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Affordability
-:Affordability rdf:type owl:Class ;
-               rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam#Attitude
+:Attitude rdf:type owl:Class ;
+          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
+          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Channel
-:Channel rdf:type owl:Class ;
-         rdfs:subClassOf :Communication .
+###  http://www.semanticweb.org/diversify-ccam#Beliefs
+:Beliefs rdf:type owl:Class ;
+         rdfs:subClassOf :Culture .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Collaboration
-:Collaboration rdf:type owl:Class ;
-               rdfs:subClassOf :stakeholderAction .
+###  http://www.semanticweb.org/diversify-ccam#Bureaucracy
+:Bureaucracy rdf:type owl:Class ;
+             rdfs:subClassOf :GovernanceCulture ;
+             rdfs:label "Bureaucracy"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Communication
-:Communication rdf:type owl:Class ;
-               rdfs:subClassOf :stakeholderEngagement .
+###  http://www.semanticweb.org/diversify-ccam#Cultural_Entity
+:Cultural_Entity rdf:type owl:Class ;
+                 rdfs:subClassOf :Culture ;
+                 rdfs:label "Cultural Entity"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Coverage
-:Coverage rdf:type owl:Class ;
-          rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam#Federalism
+:Federalism rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Federalism"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Equity
-:Equity rdf:type owl:Class ;
-        rdfs:subClassOf :societalObjectives .
+###  http://www.semanticweb.org/diversify-ccam#GovernanceCulture
+:GovernanceCulture rdf:type owl:Class ;
+                   rdfs:label "Governance Culture"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Instruments
-:Instruments rdf:type owl:Class ;
-             rdfs:subClassOf :Policy .
+###  http://www.semanticweb.org/diversify-ccam#Language
+:Language rdf:type owl:Class ;
+          rdfs:subClassOf :Culture .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Interviews
-:Interviews rdf:type owl:Class ;
-            rdfs:subClassOf :Involvement .
+###  http://www.semanticweb.org/diversify-ccam#Law
+:Law rdf:type owl:Class ;
+     rdfs:subClassOf :Norms .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Investments
-:Investments rdf:type owl:Class ;
-             rdfs:subClassOf :resourceAllocation .
+###  http://www.semanticweb.org/diversify-ccam#Leadership
+:Leadership rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Leadership"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Involvement
-:Involvement rdf:type owl:Class ;
-             rdfs:subClassOf :stakeholderAction .
+###  http://www.semanticweb.org/diversify-ccam#Norms
+:Norms rdf:type owl:Class ;
+       rdfs:subClassOf :Culture .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Objectives
-:Objectives rdf:type owl:Class ;
-            rdfs:subClassOf :Policy .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Policy
-:Policy rdf:type owl:Class ;
-        rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Quality
-:Quality rdf:type owl:Class ;
-         rdfs:subClassOf :publicTransport .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Seamlessness
-:Seamlessness rdf:type owl:Class ;
-              rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam#PlanningCulture
+:PlanningCulture rdf:type owl:Class ;
+                 rdfs:subClassOf :GovernanceCulture ;
+                 rdfs:label "Planning Culture"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Stakeholder
 :Stakeholder rdf:type owl:Class ;
-             rdfs:subClassOf :stakeholderAction .
+             rdfs:subClassOf :Norms .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Standardization
-:Standardization rdf:type owl:Class ;
-                 rdfs:subClassOf :nonFinancialTools .
+###  http://www.semanticweb.org/diversify-ccam#Symbols
+:Symbols rdf:type owl:Class ;
+         rdfs:subClassOf :Culture .
 
 
-###  http://www.semanticweb.org/diversify-ccam#Subsidies
-:Subsidies rdf:type owl:Class ;
-           rdfs:subClassOf :resourceAllocation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Sustainability
-:Sustainability rdf:type owl:Class ;
-                rdfs:subClassOf :societalObjectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#T11.2
-:T11.2 rdf:type owl:Class ;
-       rdfs:subClassOf <http://www.semanticweb.org/diversify-ccam#Accessibility/Availability> .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Workshop
-:Workshop rdf:type owl:Class ;
-          rdfs:subClassOf :Involvement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#approvalMechanism
-:approvalMechanism rdf:type owl:Class ;
-                   rdfs:subClassOf :deliberationProcess .
-
-
-###  http://www.semanticweb.org/diversify-ccam#avoidCannibalisation
-:avoidCannibalisation rdf:type owl:Class ;
-                      rdfs:subClassOf :financialObjectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#balanceOfInvestments
-:balanceOfInvestments rdf:type owl:Class ;
-                      rdfs:subClassOf :financialObjectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#builtEnvironment
-:builtEnvironment rdf:type owl:Class ;
-                  rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#collaborationType
-:collaborationType rdf:type owl:Class ;
-                   rdfs:subClassOf :Collaboration .
-
-
-###  http://www.semanticweb.org/diversify-ccam#cybersecurityFramework
-:cybersecurityFramework rdf:type owl:Class ;
-                        rdfs:subClassOf :Standardization .
-
-
-###  http://www.semanticweb.org/diversify-ccam#dataManagement
-:dataManagement rdf:type owl:Class ;
-                rdfs:subClassOf :Standardization .
-
-
-###  http://www.semanticweb.org/diversify-ccam#decisionMaking
-:decisionMaking rdf:type owl:Class ;
-                rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#deliberationProcess
-:deliberationProcess rdf:type owl:Class ;
-                     rdfs:subClassOf :decisionMaking .
-
-
-###  http://www.semanticweb.org/diversify-ccam#demandForCycling
-:demandForCycling rdf:type owl:Class ;
-                  rdfs:subClassOf :expectedOutcome .
-
-
-###  http://www.semanticweb.org/diversify-ccam#developmentOfTransportSystem
-:developmentOfTransportSystem rdf:type owl:Class ;
-                              rdfs:subClassOf :expectedOutcome .
-
-
-###  http://www.semanticweb.org/diversify-ccam#drawingOnScientificKnowledge
-:drawingOnScientificKnowledge rdf:type owl:Class ;
-                              rdfs:subClassOf :decisionMaking .
-
-
-###  http://www.semanticweb.org/diversify-ccam#economicViabilityOfRegion
-:economicViabilityOfRegion rdf:type owl:Class ;
-                           rdfs:subClassOf :financialObjectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#expectedOutcome
-:expectedOutcome rdf:type owl:Class ;
-                 rdfs:subClassOf :Policy .
-
-
-###  http://www.semanticweb.org/diversify-ccam#financialObjectives
-:financialObjectives rdf:type owl:Class ;
-                     rdfs:subClassOf :Objectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#generalPublic
-:generalPublic rdf:type owl:Class ;
-               rdfs:subClassOf :stakeholderAction .
-
-
-###  http://www.semanticweb.org/diversify-ccam#humanPopulation
-:humanPopulation rdf:type owl:Class ;
-                 rdfs:subClassOf :builtEnvironment .
-
-
-###  http://www.semanticweb.org/diversify-ccam#legalFramework
-:legalFramework rdf:type owl:Class ;
-                rdfs:subClassOf :Standardization .
-
-
-###  http://www.semanticweb.org/diversify-ccam#majorityLead
-:majorityLead rdf:type owl:Class ;
-              rdfs:subClassOf :politicalSituation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#mobilityPlanners
-:mobilityPlanners rdf:type owl:Class ;
-                  rdfs:subClassOf :Stakeholder .
-
-
-###  http://www.semanticweb.org/diversify-ccam#nonFinancialTools
-:nonFinancialTools rdf:type owl:Class ;
-                   rdfs:subClassOf :Instruments .
-
-
-###  http://www.semanticweb.org/diversify-ccam#politicalSituation
-:politicalSituation rdf:type owl:Class ;
-                    rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#powerOfLocalGovernment
-:powerOfLocalGovernment rdf:type owl:Class ;
-                        rdfs:subClassOf :politicalSituation .
-
-
-###  http://www.semanticweb.org/diversify-ccam#projectOrActivity
-:projectOrActivity rdf:type owl:Class ;
-                   rdfs:subClassOf :stakeholderEngagement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#promotionOfRenewableEnergy
-:promotionOfRenewableEnergy rdf:type owl:Class ;
-                            rdfs:subClassOf :expectedOutcome .
-
-
-###  http://www.semanticweb.org/diversify-ccam#publicAuthority
-:publicAuthority rdf:type owl:Class ;
-                 rdfs:subClassOf :Stakeholder .
-
-
-###  http://www.semanticweb.org/diversify-ccam#publicConsultation
-:publicConsultation rdf:type owl:Class ;
-                    rdfs:subClassOf :Involvement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#publicTransport
-:publicTransport rdf:type owl:Class ;
-                 rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#pullMeasures
-:pullMeasures rdf:type owl:Class ;
-              rdfs:subClassOf :nonFinancialTools .
-
-
-###  http://www.semanticweb.org/diversify-ccam#pushMeasures
-:pushMeasures rdf:type owl:Class ;
-              rdfs:subClassOf :nonFinancialTools .
-
-
-###  http://www.semanticweb.org/diversify-ccam#resourceAllocation
-:resourceAllocation rdf:type owl:Class ;
-                    rdfs:subClassOf :Instruments .
-
-
-###  http://www.semanticweb.org/diversify-ccam#safetyAndSecurity
-:safetyAndSecurity rdf:type owl:Class ;
-                   rdfs:subClassOf :societalObjectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#schoolTransportation
-:schoolTransportation rdf:type owl:Class ;
-                      rdfs:subClassOf :Stakeholder .
-
-
-###  http://www.semanticweb.org/diversify-ccam#societalObjectives
-:societalObjectives rdf:type owl:Class ;
-                    rdfs:subClassOf :Objectives .
-
-
-###  http://www.semanticweb.org/diversify-ccam#stakeholderAction
-:stakeholderAction rdf:type owl:Class ;
-                   rdfs:subClassOf :stakeholderEngagement .
-
-
-###  http://www.semanticweb.org/diversify-ccam#stakeholderEngagement
-:stakeholderEngagement rdf:type owl:Class ;
-                       rdfs:subClassOf :Context .
-
-
-###  http://www.semanticweb.org/diversify-ccam#standardizationOfProcess
-:standardizationOfProcess rdf:type owl:Class ;
-                          rdfs:subClassOf :deliberationProcess .
-
-
-###  http://www.semanticweb.org/diversify-ccam#tourismExperience
-:tourismExperience rdf:type owl:Class ;
-                   rdfs:subClassOf :expectedOutcome .
-
-
-###  http://www.semanticweb.org/diversify-ccam#transitProvision
-:transitProvision rdf:type owl:Class ;
-                  rdfs:subClassOf :nonFinancialTools .
-
-
-###  http://www.semanticweb.org/diversify-ccam#transportDecarbonisation
-:transportDecarbonisation rdf:type owl:Class ;
-                          rdfs:subClassOf :expectedOutcome .
-
-
-###  http://www.semanticweb.org/diversify-ccam#transportInfrastructure
-:transportInfrastructure rdf:type owl:Class ;
-                         rdfs:subClassOf :transitProvision .
-
-
-###  http://www.semanticweb.org/diversify-ccam#transportSystem
-:transportSystem rdf:type owl:Class ;
-                 rdfs:subClassOf :builtEnvironment .
+###  http://www.semanticweb.org/diversify-ccam#Value
+:Value rdf:type owl:Class ;
+       rdfs:subClassOf :Culture .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Accessibility/Availability
@@ -588,14 +414,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam#G1,G10
 <http://www.semanticweb.org/diversify-ccam#G1,G10> rdf:type owl:Class ;
                                                    rdfs:subClassOf :Equity .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Accountability
-:Accountability rdf:type owl:Class ;
-                rdfs:subClassOf :Driver ;
-                terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000231940}" ;
-                rdfs:label "Accountability"@en ;
-                skos:definition "The obligation of individuals, organizations, and institutions to explain and justify their actions, accept responsibility, and disclose results in a transparent manner."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Adherence
@@ -611,25 +429,9 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :Policy .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Attitude
-:Attitude rdf:type owl:Class ;
-          rdfs:subClassOf :Culture ;
-          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
-          rdfs:label "Attitude"@en ;
-          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/AvailabilityOfAccessibilityStrategy
 :AvailabilityOfAccessibilityStrategy rdf:type owl:Class ;
                                      rdfs:subClassOf :availabilityOfStrategy .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Benefits
-:Benefits rdf:type owl:Class ;
-          rdfs:subClassOf :Culture ;
-          terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000375704}" ;
-          rdfs:label "Benefits"@en ;
-          skos:definition "Tangible or intangible rewards that individuals or groups receive through access to opportunities, resources, or services in areas such as culture, education, or innovation."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Bridge
@@ -649,9 +451,9 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                   skos:definition "Man-made or modified structures that provide people with living, working, and recreational spaces."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Bureaucracy
-:Bureaucracy rdf:type owl:Class ;
-             rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/Channel
+:Channel rdf:type owl:Class ;
+         rdfs:subClassOf :Communication .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Climate
@@ -661,17 +463,19 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
          skos:definition "The prevailing weather conditions in an area over a long period of time."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Collaboration
+:Collaboration rdf:type owl:Class ;
+               rdfs:subClassOf :stakeholderAction .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Communication
+:Communication rdf:type owl:Class ;
+               rdfs:subClassOf :stakeholderEngagement .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Context
 :Context rdf:type owl:Class ;
          rdfs:subClassOf :Policy .
-
-
-###  http://www.semanticweb.org/diversify-ccam/CulturalThing
-:CulturalThing rdf:type owl:Class ;
-               rdfs:subClassOf :Culture ;
-               terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000370514}" ;
-               rdfs:label "Cultural Thing"@en ;
-               skos:definition "Any concept that embodies, expresses, or represents the cultural identity, heritage, or creativity of a community."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Culture
@@ -679,14 +483,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000184755" ;
          rdfs:label "Culture"@en ;
          skos:definition "Culture should be regarded as the set of distinctive spiritual, material, intellectual and emotional features of society or a social group... it encompasses, in addition to art and literature, lifestyles, ways of living together, value systems, traditions and beliefs."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Cycling
-:Cycling rdf:type owl:Class ;
-         rdfs:subClassOf :Mobility ;
-         terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-         rdfs:label "Cycling"@en ;
-         skos:definition "The use of bicycles as a mode of transportation, recreation, or physical activity, often promoted in urban planning for its role in reducing emissions, enhancing public health, and supporting inclusive access."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/CyclingInfrastructure
@@ -705,15 +501,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                        skos:definition "Digital infrastructure is the physical hardware and software-based technologies that enable digital services. It includes the IT systems and networks that enable organisations to operate and communicate."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Driver
-:Driver rdf:type owl:Class ;
-        rdfs:subClassOf :Culture ,
-                        :Influence ;
-        terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374267}" ;
-        rdfs:label "Driver"@en ;
-        skos:definition "An underlying cause or force that contributes to individual or collective motivation, policy direction, or systemic transformation toward specific goals."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/EVChargingStation
 :EVChargingStation rdf:type owl:Class ;
                    rdfs:subClassOf :DigitalInfrastructure ;
@@ -729,14 +516,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
            skos:definition "The complex of a community of organisms and its environment functioning as an ecological unit."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Effectiveness
-:Effectiveness rdf:type owl:Class ;
-               rdfs:subClassOf :Driver ;
-               terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000231940}" ;
-               rdfs:label "Effectiveness"@en ;
-               skos:definition "A measure to the extent to which education systems or governance mechanisms fulfill their goals and contribute to equitable and quality outcomes."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Environment
 :Environment rdf:type owl:Class ;
              rdfs:subClassOf :Geography ;
@@ -748,17 +527,9 @@ and
              skos:definition "The surroundings in which an organism or organization operates, including air, water, land, natural resources, flora, fauna, humans, and their interrelations."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Fairness
-:Fairness rdf:type owl:Class ;
-          rdfs:subClassOf :Driver ;
-          terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-          rdfs:label "Fairness"@en ;
-          skos:definition "The quality of making judgments that are free from discrimination, bias, or favoritism, ensuring equitable access, opportunity, and representation for all individuals and groups."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Federalism
-:Federalism rdf:type owl:Class ;
-            rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/Equity
+:Equity rdf:type owl:Class ;
+        rdfs:subClassOf :societalObjectives .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Fog
@@ -780,14 +551,6 @@ and
        rdfs:subClassOf :agendaSettings .
 
 
-###  http://www.semanticweb.org/diversify-ccam/GreenInitiatives
-:GreenInitiatives rdf:type owl:Class ;
-                  rdfs:subClassOf :Sustainability ;
-                  terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-                  rdfs:label "Green Initiatives"@en ;
-                  skos:definition "Programs, projects, or actions aimed at promoting environmental sustainability, to advance ecological protection, climate action, and sustainable development."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Hill
 :Hill rdf:type owl:Class ;
       rdfs:subClassOf :Landform ;
@@ -804,14 +567,6 @@ and
           skos:definition "The set of characteristics, values, affiliations, and experiences that define an individual or group, often shaped by culture, history, language, and social context."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Inclusivity
-:Inclusivity rdf:type owl:Class ;
-             rdfs:subClassOf :Driver ;
-             terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-             rdfs:label "Inclusivity"@en ;
-             skos:definition "A value and approach that ensures equal access, respect for diversity, and full participation for all people, regardless of gender, ethnicity, ability, age, or background."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Influence
 :Influence rdf:type owl:Class ;
            rdfs:subClassOf :Policy .
@@ -824,28 +579,9 @@ and
                 skos:definition "Facilities and systems that support the functioning of society. Infrastructure, including transport infrastructure, requires proper planning as well as systematic construction, maintenance and repair of the various elements in order to fulfil its functions. "@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Innovation
-:Innovation rdf:type owl:Class ;
-            rdfs:subClassOf :CulturalThing ;
-            terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000379904}" ;
-            rdfs:label "Innovation"@en ;
-            skos:definition "The introduction and application of new or significantly improved ideas, products, services, or processes that enhance sustainability, inclusion, or development outcomes."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Integrity
-:Integrity rdf:type owl:Class ;
-           rdfs:subClassOf :Driver ;
-           terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000371589}" ;
-           rdfs:label "Integrity"@en ;
-           skos:definition "A moral and ethical quality characterized by honesty, consistency, and adherence to principles, especially in professional, institutional, and public contexts."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Intermodality
-:Intermodality rdf:type owl:Class ;
-               rdfs:subClassOf :Mobility ;
-               terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-               rdfs:label "Intermodality"@en ;
-               skos:definition "A transport strategy that integrates different mobility modes into a connected network, enabling users to switch between them easily and promoting sustainable, inclusive urban mobility."@en .
+###  http://www.semanticweb.org/diversify-ccam/Instruments
+:Instruments rdf:type owl:Class ;
+             rdfs:subClassOf :Policy .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Intersection
@@ -854,6 +590,21 @@ and
               terms:source "https://trt.trb.org/term/92905" ;
               rdfs:label "Intersection"@en ;
               skos:definition "Areas where two or more highways join or cross, within which are included the roadway and roadside facilities for traffic movements in that area."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Interviews
+:Interviews rdf:type owl:Class ;
+            rdfs:subClassOf :Involvement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Investments
+:Investments rdf:type owl:Class ;
+             rdfs:subClassOf :resourceAllocation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Involvement
+:Involvement rdf:type owl:Class ;
+             rdfs:subClassOf :stakeholderAction .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/LandUseDevelopment
@@ -873,14 +624,6 @@ and
           skos:definition "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Mobility
-:Mobility rdf:type owl:Class ;
-          rdfs:subClassOf :CulturalThing ;
-          terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-          rdfs:label "Mobility"@en ;
-          skos:definition "The capacity and means for individuals and communities to access places, opportunities, and services through various modes of transport or communication, with attention to sustainability, equity, and resilience."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Morphology
 :Morphology rdf:type owl:Class ;
             rdfs:subClassOf :Geography ;
@@ -897,20 +640,9 @@ and
                     skos:definition "An environmental system in which minimal to no anthropisation has occurred and non-human agents are the primary determinants of the system's dynamics and composition."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/NewMobilityOptions
-:NewMobilityOptions rdf:type owl:Class ;
-                    rdfs:subClassOf :Innovation ;
-                    terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-                    rdfs:label "New Mobility Options"@en ;
-                    skos:definition "Transport solutions that go beyond traditional private car use, including shared, electric, autonomous, or multimodal options designed to reduce environmental impact and improve urban accessibility."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/NewTechnologies
-:NewTechnologies rdf:type owl:Class ;
-                 rdfs:subClassOf :Innovation ;
-                 terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000379904}" ;
-                 rdfs:label "New Technologies"@en ;
-                 skos:definition "Innovative tools, systems, or methods—Possibly aiming at helping sustainability objectives—that enable transformative change across sectors such as energy, transport, education, health, and governance."@en .
+###  http://www.semanticweb.org/diversify-ccam/Objectives
+:Objectives rdf:type owl:Class ;
+            rdfs:subClassOf :Policy .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/PedestrianInfrastructure
@@ -921,32 +653,9 @@ and
                           skos:definition "Pedestrian infrastructure encompasses the physical elements designed to support safe and convenient walking environments, including sidewalks, crosswalks, pedestrian signals, and traffic calming features."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/PerceivedMeasurement
-:PerceivedMeasurement rdf:type owl:Class ;
-                      rdfs:subClassOf :Culture ;
-                      terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-                      rdfs:label "Perceived Measurement"@en ;
-                      skos:definition "A measurement based on individual or group perceptions, often used to evaluate subjective experiences, attitudes, or expectations in contrast to objective metrics."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Perception
-:Perception rdf:type owl:Class ;
-            rdfs:subClassOf :Culture ;
-            terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-            rdfs:label "Perception"@en ;
-            skos:definition "A mental representation resulting from the interpretation of sensory inputs or social information, which influences behavior, attitudes, and decisions."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/Policy
-:Policy rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/diversify-ccam/PolicyRules
-:PolicyRules rdf:type owl:Class ;
-             rdfs:subClassOf :CulturalThing ;
-             terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-             rdfs:label "Policy Rules"@en ;
-             skos:definition "A set of rules or frameworks designed to govern actions and outcomes within public administration, organizations, or communities, supporting sustainable development and inclusive governance."@en .
+:Policy rdf:type owl:Class ;
+        rdfs:subClassOf :Context .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Precipitation
@@ -958,12 +667,9 @@ and
                skos:definition "Any form of water—liquid or solid—that falls from the atmosphere to the Earth's surface, including rain, snow, sleet, hail, and drizzle."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/PublicInterest
-:PublicInterest rdf:type owl:Class ;
-                rdfs:subClassOf :Driver ;
-                terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-                rdfs:label "Public Interest"@en ;
-                skos:definition "A principle that guides actions, policies, and decisions toward the welfare, rights, and well-being of the general population. It ensures that all actions and decisions contribute to equity, sustainability, and human rights."@en .
+###  http://www.semanticweb.org/diversify-ccam/Quality
+:Quality rdf:type owl:Class ;
+         rdfs:subClassOf :publicTransport .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Rain
@@ -971,22 +677,6 @@ and
       rdfs:subClassOf :Precipitation ;
       rdfs:label "Rain"@en ;
       skos:definition "Precipitation of drops of water that falls from a cloud."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Reliability
-:Reliability rdf:type owl:Class ;
-             rdfs:subClassOf :Driver ;
-             terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000247853}" ;
-             rdfs:label "Reliability"@en ;
-             skos:definition "A measure of the consistency and dependability of outcomes, services, data, or infrastructure, often used to evaluate performance, quality, and trustworthiness."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Risks
-:Risks rdf:type owl:Class ;
-       rdfs:subClassOf :Culture ;
-       terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000236075}" ;
-       rdfs:label "Risks"@en ;
-       skos:definition "The potential for adverse effects on people, assets, systems, or the environment due to uncertain events or conditions."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/River
@@ -1002,14 +692,6 @@ and
                     rdfs:subClassOf :TransportInfrastructure ;
                     rdfs:label "Road Infrustructure"@en ;
                     skos:definition "Physical structures and facilities constituting the road network, including roads, bridges, tunnels, signage, and drainage systems."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Safety
-:Safety rdf:type owl:Class ;
-        rdfs:subClassOf :Driver ;
-        terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000374016}" ;
-        rdfs:label "Safety"@en ;
-        skos:definition "The state of being protected from or unlikely to cause danger, risk, injury, or harm, especially in the context of physical spaces, transportation, health, and public services."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Satisfaction
@@ -1042,17 +724,29 @@ and
       skos:definition "Precipitation made from ice crystals falling from the sky."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Stakeholder
+:Stakeholder rdf:type owl:Class ;
+             rdfs:subClassOf :stakeholderAction .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Standardization
+:Standardization rdf:type owl:Class ;
+                 rdfs:subClassOf :nonFinancialTools .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Strategy
 :Strategy rdf:type owl:Class ;
           rdfs:subClassOf :Policy .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Sustainability
-:Sustainability rdf:type owl:Class ;
-                rdfs:subClassOf :CulturalThing ;
-                terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000378293}" ;
-                rdfs:label "Sustainability"@en ;
-                skos:definition "A holistic approach to development and resource management that balances ecological health, social well-being, cultural diversity, and economic progress to ensure long-term resilience and quality of life."@en .
+###  http://www.semanticweb.org/diversify-ccam/Subsidies
+:Subsidies rdf:type owl:Class ;
+           rdfs:subClassOf :resourceAllocation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/T11.2
+:T11.2 rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.semanticweb.org/diversify-ccam#Accessibility/Availability> .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/TelecommunicationInfrastructure
@@ -1070,28 +764,12 @@ and
             skos:definition "The configuration of a surface including its relief and the position of its natural and man-made features."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Transparency
-:Transparency rdf:type owl:Class ;
-              rdfs:subClassOf :Driver ;
-              terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000371589}" ;
-              rdfs:label "Transparency"@en ;
-              skos:definition "The quality of being open, honest, and accountable, particularly in public institutions and governance, ensuring that actions and decisions are observable and understandable to stakeholders."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/TransportInfrastructure
 :TransportInfrastructure rdf:type owl:Class ;
                          rdfs:subClassOf :Infrastructure ;
                          terms:source "https://www.sciencedirect.com/topics/social-sciences/transport-infrastructure" ;
                          rdfs:label "Transport Infrastructure"@en ;
                          skos:definition "Transport infrastructure refers to the physical components and networks that enable the movement of people, goods, and services in a society."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/TransportSystem
-:TransportSystem rdf:type owl:Class ;
-                 rdfs:subClassOf :Mobility ;
-                 terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-                 rdfs:label "Transport System"@en ;
-                 skos:definition "An organized network of infrastructure, vehicles, technologies, and services that enables the movement of people and goods within and across regions, supporting economic activity, social inclusion, and environmental sustainability."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Trust
@@ -1115,14 +793,6 @@ and
              rdfs:subClassOf :Morphology ;
              rdfs:label "Urban Makeup"@en ;
              skos:definition "The makeup of structures within a built site.  "@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/Walking
-:Walking rdf:type owl:Class ;
-         rdfs:subClassOf :Mobility ;
-         terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000380649}" ;
-         rdfs:label "Walking"@en ;
-         skos:definition "The act of moving by foot as a mode of transport or physical activity, promoting sustainable, healthy, and accessible communities."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/WaterBody
@@ -1150,14 +820,19 @@ and
       skos:definition "Air motion relative to the Earth's surface. Unless otherwise specified, only the horizontal component is considered"@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :Involvement .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/agendaSettings
 :agendaSettings rdf:type owl:Class ;
                 rdfs:subClassOf :Policy .
 
 
-###  http://www.semanticweb.org/diversify-ccam/availabilityOfKnowledge
-:availabilityOfKnowledge rdf:type owl:Class ;
-                         rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/approvalMechanism
+:approvalMechanism rdf:type owl:Class ;
+                   rdfs:subClassOf :deliberationProcess .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/availabilityOfStrategy
@@ -1165,9 +840,24 @@ and
                         rdfs:subClassOf :Strategy .
 
 
-###  http://www.semanticweb.org/diversify-ccam/barriersForNewRegulations
-:barriersForNewRegulations rdf:type owl:Class ;
-                           rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/avoidCannibalisation
+:avoidCannibalisation rdf:type owl:Class ;
+                      rdfs:subClassOf :financialObjectives .
+
+
+###  http://www.semanticweb.org/diversify-ccam/balanceOfInvestments
+:balanceOfInvestments rdf:type owl:Class ;
+                      rdfs:subClassOf :financialObjectives .
+
+
+###  http://www.semanticweb.org/diversify-ccam/builtEnvironment
+:builtEnvironment rdf:type owl:Class ;
+                  rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/diversify-ccam/collaborationType
+:collaborationType rdf:type owl:Class ;
+                   rdfs:subClassOf :Collaboration .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/communityFocus
@@ -1180,9 +870,54 @@ and
                   rdfs:subClassOf :Approaches .
 
 
-###  http://www.semanticweb.org/diversify-ccam/crossRegionTransportationPolicies
-:crossRegionTransportationPolicies rdf:type owl:Class ;
-                                   rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/cybersecurityFramework
+:cybersecurityFramework rdf:type owl:Class ;
+                        rdfs:subClassOf :Standardization .
+
+
+###  http://www.semanticweb.org/diversify-ccam/dataManagement
+:dataManagement rdf:type owl:Class ;
+                rdfs:subClassOf :Standardization .
+
+
+###  http://www.semanticweb.org/diversify-ccam/decisionMaking
+:decisionMaking rdf:type owl:Class ;
+                rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/diversify-ccam/deliberationProcess
+:deliberationProcess rdf:type owl:Class ;
+                     rdfs:subClassOf :decisionMaking .
+
+
+###  http://www.semanticweb.org/diversify-ccam/demandForCycling
+:demandForCycling rdf:type owl:Class ;
+                  rdfs:subClassOf :expectedOutcome .
+
+
+###  http://www.semanticweb.org/diversify-ccam/developmentOfTransportSystem
+:developmentOfTransportSystem rdf:type owl:Class ;
+                              rdfs:subClassOf :expectedOutcome .
+
+
+###  http://www.semanticweb.org/diversify-ccam/drawingOnScientificKnowledge
+:drawingOnScientificKnowledge rdf:type owl:Class ;
+                              rdfs:subClassOf :decisionMaking .
+
+
+###  http://www.semanticweb.org/diversify-ccam/economicViabilityOfRegion
+:economicViabilityOfRegion rdf:type owl:Class ;
+                           rdfs:subClassOf :financialObjectives .
+
+
+###  http://www.semanticweb.org/diversify-ccam/expectedOutcome
+:expectedOutcome rdf:type owl:Class ;
+                 rdfs:subClassOf :Policy .
+
+
+###  http://www.semanticweb.org/diversify-ccam/financialObjectives
+:financialObjectives rdf:type owl:Class ;
+                     rdfs:subClassOf :Objectives .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/focusOnCarFreeMobility
@@ -1205,9 +940,19 @@ and
      rdfs:subClassOf :sdgGoals .
 
 
+###  http://www.semanticweb.org/diversify-ccam/generalPublic
+:generalPublic rdf:type owl:Class ;
+               rdfs:subClassOf :stakeholderAction .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/governmentCulture
 :governmentCulture rdf:type owl:Class ;
                    rdfs:subClassOf :Policy .
+
+
+###  http://www.semanticweb.org/diversify-ccam/humanPopulation
+:humanPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :builtEnvironment .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/infrastructureForPublicAndActiveMobility
@@ -1215,19 +960,29 @@ and
                                           rdfs:subClassOf :conflictingGoals .
 
 
-###  http://www.semanticweb.org/diversify-ccam/leadershipStyle
-:leadershipStyle rdf:type owl:Class ;
-                 rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/legalFramework
+:legalFramework rdf:type owl:Class ;
+                rdfs:subClassOf :Standardization .
 
 
-###  http://www.semanticweb.org/diversify-ccam/numberOfDecisionMakers
-:numberOfDecisionMakers rdf:type owl:Class ;
-                        rdfs:subClassOf :Bureaucracy .
+###  http://www.semanticweb.org/diversify-ccam/majorityLead
+:majorityLead rdf:type owl:Class ;
+              rdfs:subClassOf :politicalSituation .
 
 
-###  http://www.semanticweb.org/diversify-ccam/planningTraditionsAndCultures
-:planningTraditionsAndCultures rdf:type owl:Class ;
-                               rdfs:subClassOf :Driver .
+###  http://www.semanticweb.org/diversify-ccam/mobilityPlanners
+:mobilityPlanners rdf:type owl:Class ;
+                  rdfs:subClassOf :Stakeholder .
+
+
+###  http://www.semanticweb.org/diversify-ccam/nonFinancialTools
+:nonFinancialTools rdf:type owl:Class ;
+                   rdfs:subClassOf :Instruments .
+
+
+###  http://www.semanticweb.org/diversify-ccam/politicalSituation
+:politicalSituation rdf:type owl:Class ;
+                    rdfs:subClassOf :Context .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/politicalWill
@@ -1235,14 +990,84 @@ and
                rdfs:subClassOf :willAndMotivation .
 
 
+###  http://www.semanticweb.org/diversify-ccam/powerOfLocalGovernment
+:powerOfLocalGovernment rdf:type owl:Class ;
+                        rdfs:subClassOf :politicalSituation .
+
+
+###  http://www.semanticweb.org/diversify-ccam/projectOrActivity
+:projectOrActivity rdf:type owl:Class ;
+                   rdfs:subClassOf :stakeholderEngagement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/promotionOfRenewableEnergy
+:promotionOfRenewableEnergy rdf:type owl:Class ;
+                            rdfs:subClassOf :expectedOutcome .
+
+
+###  http://www.semanticweb.org/diversify-ccam/publicAuthority
+:publicAuthority rdf:type owl:Class ;
+                 rdfs:subClassOf :Stakeholder .
+
+
+###  http://www.semanticweb.org/diversify-ccam/publicConsultation
+:publicConsultation rdf:type owl:Class ;
+                    rdfs:subClassOf :Involvement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/publicTransport
+:publicTransport rdf:type owl:Class ;
+                 rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/diversify-ccam/pullMeasures
+:pullMeasures rdf:type owl:Class ;
+              rdfs:subClassOf :nonFinancialTools .
+
+
+###  http://www.semanticweb.org/diversify-ccam/pushMeasures
+:pushMeasures rdf:type owl:Class ;
+              rdfs:subClassOf :nonFinancialTools .
+
+
+###  http://www.semanticweb.org/diversify-ccam/resourceAllocation
+:resourceAllocation rdf:type owl:Class ;
+                    rdfs:subClassOf :Instruments .
+
+
+###  http://www.semanticweb.org/diversify-ccam/safetyAndSecurity
+:safetyAndSecurity rdf:type owl:Class ;
+                   rdfs:subClassOf :societalObjectives .
+
+
+###  http://www.semanticweb.org/diversify-ccam/schoolTransportation
+:schoolTransportation rdf:type owl:Class ;
+                      rdfs:subClassOf :Stakeholder .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/sdgGoals
 :sdgGoals rdf:type owl:Class ;
           rdfs:subClassOf :Goals .
 
 
-###  http://www.semanticweb.org/diversify-ccam/speedOfDecisionMaking
-:speedOfDecisionMaking rdf:type owl:Class ;
-                       rdfs:subClassOf :Bureaucracy .
+###  http://www.semanticweb.org/diversify-ccam/societalObjectives
+:societalObjectives rdf:type owl:Class ;
+                    rdfs:subClassOf :Objectives .
+
+
+###  http://www.semanticweb.org/diversify-ccam/stakeholderAction
+:stakeholderAction rdf:type owl:Class ;
+                   rdfs:subClassOf :stakeholderEngagement .
+
+
+###  http://www.semanticweb.org/diversify-ccam/stakeholderEngagement
+:stakeholderEngagement rdf:type owl:Class ;
+                       rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/diversify-ccam/standardizationOfProcess
+:standardizationOfProcess rdf:type owl:Class ;
+                          rdfs:subClassOf :deliberationProcess .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/sustainabilityAndAttractingTourists
@@ -1250,9 +1075,34 @@ and
                                      rdfs:subClassOf :conflictingGoals .
 
 
+###  http://www.semanticweb.org/diversify-ccam/tourismExperience
+:tourismExperience rdf:type owl:Class ;
+                   rdfs:subClassOf :expectedOutcome .
+
+
+###  http://www.semanticweb.org/diversify-ccam/transitProvision
+:transitProvision rdf:type owl:Class ;
+                  rdfs:subClassOf :nonFinancialTools .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/transportAsAPriority
 :transportAsAPriority rdf:type owl:Class ;
                       rdfs:subClassOf :Approaches .
+
+
+###  http://www.semanticweb.org/diversify-ccam/transportDecarbonisation
+:transportDecarbonisation rdf:type owl:Class ;
+                          rdfs:subClassOf :expectedOutcome .
+
+
+###  http://www.semanticweb.org/diversify-ccam/transportInfrastructure
+:transportInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :transitProvision .
+
+
+###  http://www.semanticweb.org/diversify-ccam/transportSystem
+:transportSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :builtEnvironment .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/understandingOfTheSite
