@@ -12,8 +12,7 @@
 @base <http://www.semanticweb.org/diversify-ccam/> .
 
 <http://www.semanticweb.org/diversify-ccam> rdf:type owl:Ontology ;
-                                             owl:imports <http://www.opengis.net/ont/geosparql/1.1> ,
-                                                         <https://bimerr.iot.linkeddata.es/def/weather> ,
+                                             owl:imports <https://bimerr.iot.linkeddata.es/def/weather> ,
                                                          <https://saref.etsi.org/saref4city/v2.1.1/> ;
                                              rdfs:comment "This is version v0.1 of the DiversifyCCAM comceptual model." .
 
@@ -246,40 +245,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#AnimalPopulation
-:AnimalPopulation rdf:type owl:Class ;
-                  rdfs:subClassOf :Population .
-
-
-###  http://www.semanticweb.org/diversify-ccam#HumanPopulation
-:HumanPopulation rdf:type owl:Class ;
-                 rdfs:subClassOf :Population .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PlantPopulation
-:PlantPopulation rdf:type owl:Class ;
-                 rdfs:subClassOf :Population .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Population
-:Population rdf:type owl:Class ;
-            rdfs:subClassOf :Geography .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PrivateSystem
-:PrivateSystem rdf:type owl:Class ;
-               rdfs:subClassOf :TransportSystem .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PublicSystem
-:PublicSystem rdf:type owl:Class ;
-              rdfs:subClassOf :TransportSystem .
-
-
-###  http://www.semanticweb.org/diversify-ccam#TransportSystem
-:TransportSystem rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/diversify-ccam#Accessibility/Availability
 <http://www.semanticweb.org/diversify-ccam#Accessibility/Availability> rdf:type owl:Class ;
                                                                        rdfs:subClassOf :societalObjectives .
@@ -296,6 +261,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
            terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000377253}" ;
            rdfs:label "Adherence"@en ;
            skos:definition "The conscious and voluntary commitment to follow, uphold, or respect certain principles, values, norms, or practices, often within a cultural, ethical, or educational framework."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/AnimalPopulation
+:AnimalPopulation rdf:type owl:Class ;
+                  rdfs:subClassOf :Population .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Approaches
@@ -465,6 +435,11 @@ and
       skos:definition "A rounded elevation of limited extent rising above the surrounding land with local relief of less than 300m."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/HumanPopulation
+:HumanPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Identity
 :Identity rdf:type owl:Class ;
           rdfs:subClassOf :Attitude ;
@@ -586,9 +561,19 @@ and
                  rdfs:label "Planning Culture"@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/PlantPopulation
+:PlantPopulation rdf:type owl:Class ;
+                 rdfs:subClassOf :Population .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Policy
 :Policy rdf:type owl:Class ;
         rdfs:subClassOf :Context .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Population
+:Population rdf:type owl:Class ;
+            rdfs:subClassOf :Geography .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Precipitation
@@ -598,6 +583,16 @@ and
                terms:source "Based on: https://gcos.wmo.int/en/essential-climate-variables/precipitation" ;
                rdfs:label "Precipitation"@en ;
                skos:definition "Any form of water—liquid or solid—that falls from the atmosphere to the Earth's surface, including rain, snow, sleet, hail, and drizzle."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PrivateSystem
+:PrivateSystem rdf:type owl:Class ;
+               rdfs:subClassOf :TransportSystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PublicSystem
+:PublicSystem rdf:type owl:Class ;
+              rdfs:subClassOf :TransportSystem .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Quality
@@ -708,6 +703,10 @@ and
                          terms:source "https://www.sciencedirect.com/topics/social-sciences/transport-infrastructure" ;
                          rdfs:label "Transport Infrastructure"@en ;
                          skos:definition "Transport infrastructure refers to the physical components and networks that enable the movement of people, goods, and services in a society."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/TransportSystem
+:TransportSystem rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Trust
