@@ -80,6 +80,24 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#administratedBy
+:administratedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain :BuiltEnvironment ;
+                 rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
+
+
+###  http://www.semanticweb.org/diversify-ccam#hasEcosystem
+:hasEcosystem rdf:type owl:ObjectProperty ;
+              rdfs:domain :NaturalEnvironment ;
+              rdfs:range :Ecosystem .
+
+
+###  http://www.semanticweb.org/diversify-ccam#usesInfrastructure
+:usesInfrastructure rdf:type owl:ObjectProperty ;
+                    rdfs:domain :TransportSystem ;
+                    rdfs:range :TransportInfrastructure .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/bridgesOver
 :bridgesOver rdf:type owl:ObjectProperty ;
              rdfs:domain :Bridge ;
