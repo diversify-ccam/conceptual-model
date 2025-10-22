@@ -80,60 +80,28 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam/administratedBy
-:administratedBy rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/diversify-ccam#hasLanguage
+:hasLanguage rdf:type owl:ObjectProperty ;
+             rdfs:domain :Culture ;
+             rdfs:range :Language .
 
 
-###  http://www.semanticweb.org/diversify-ccam/bridgesOver
-:bridgesOver rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/diversify-ccam#hasNorm
+:hasNorm rdf:type owl:ObjectProperty ;
+         rdfs:domain :Culture ;
+         rdfs:range :Norm .
 
 
-###  http://www.semanticweb.org/diversify-ccam/existsIn
-:existsIn rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasAttitude
-:hasAttitude rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/diversify-ccam#hasSymbol
+:hasSymbol rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Symbol .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasBelief
 :hasBelief rdf:type owl:ObjectProperty ;
            rdfs:domain :Culture ;
-           rdfs:range :Beliefs .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasClimate
-:hasClimate rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasEcosystem
-:hasEcosystem rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasFauna
-:hasFauna rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasFlora
-:hasFlora rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasInfrastructure
-:hasInfrastructure rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasMorphology
-:hasMorphology rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasPopulation
-:hasPopulation rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasTopography
-:hasTopography rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty .
+           rdfs:range :Belief .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasValue
@@ -142,32 +110,33 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           rdfs:range :Value .
 
 
-###  http://www.semanticweb.org/diversify-ccam/isDrivenBy
-:isDrivenBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Trust .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/refersTo
 :refersTo rdf:type owl:ObjectProperty ;
           rdfs:domain :Culture ;
-          rdfs:range :Cultural_Entity .
-
-
-###  http://www.semanticweb.org/diversify-ccam/sharesInfrastructure
-:sharesInfrastructure rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/tunnelsThrough
-:tunnelsThrough rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/diversify-ccam/usesInfrastructure
-:usesInfrastructure rdf:type owl:ObjectProperty .
+          rdfs:range :CulturalEntity .
 
 
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.semanticweb.org/diversify-ccam#hasTimePeriod
+:hasTimePeriod rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Culture ;
+               rdfs:range xsd:duration .
+
+
+###  http://www.semanticweb.org/diversify-ccam#isFlexible
+:isFlexible rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Law ;
+            rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/diversify-ccam#targetDomain
+:targetDomain rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Law ;
+              rdfs:range xsd:string .
+
 
 ###  http://www.semanticweb.org/diversify-ccam/depth
 :depth rdf:type owl:DatatypeProperty ;
@@ -242,9 +211,8 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Beliefs
-:Beliefs rdf:type owl:Class ;
-         rdfs:subClassOf :Culture .
+###  http://www.semanticweb.org/diversify-ccam/Belief
+:Belief rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Bureaucracy
@@ -253,10 +221,9 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
              rdfs:label "Bureaucracy"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Cultural_Entity
-:Cultural_Entity rdf:type owl:Class ;
-                 rdfs:subClassOf :Culture ;
-                 rdfs:label "Cultural Entity"@en .
+###  http://www.semanticweb.org/diversify-ccam/CulturalEntity
+:CulturalEntity rdf:type owl:Class ;
+                rdfs:label "Cultural Entity"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Culture
@@ -274,6 +241,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/GovernanceCulture
 :GovernanceCulture rdf:type owl:Class ;
+                   rdfs:subClassOf :Culture ;
                    rdfs:label "Governance Culture"@en .
 
 
@@ -286,13 +254,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Language
-:Language rdf:type owl:Class ;
-          rdfs:subClassOf :Culture .
+:Language rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Law
 :Law rdf:type owl:Class ;
-     rdfs:subClassOf :Norms .
+     rdfs:subClassOf :Norm .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Leadership
@@ -301,9 +268,8 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
             rdfs:label "Leadership"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Norms
-:Norms rdf:type owl:Class ;
-       rdfs:subClassOf :Culture .
+###  http://www.semanticweb.org/diversify-ccam/Norm
+:Norm rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/PlanningCulture
@@ -320,9 +286,8 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
               skos:definition "The perceived degree to which personal or collective expectations related to cultural engagement, education, or life quality are met.e"@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Symbols
-:Symbols rdf:type owl:Class ;
-         rdfs:subClassOf :Culture .
+###  http://www.semanticweb.org/diversify-ccam/Symbol
+:Symbol rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Trust
@@ -334,8 +299,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Value
-:Value rdf:type owl:Class ;
-       rdfs:subClassOf :Culture .
+:Value rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
