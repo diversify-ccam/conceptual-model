@@ -80,6 +80,19 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#hasModes
+:hasModes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :inMixedModes ;
+          rdfs:domain :MixedModeInfrastructure ;
+          rdfs:range :SingleModeInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#inMixedModes
+:inMixedModes rdf:type owl:ObjectProperty ;
+              rdfs:domain :SingleModeInfrastructure ;
+              rdfs:range :MixedModeInfrastructure .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/administratedBy
 :administratedBy rdf:type owl:ObjectProperty ;
                  rdfs:domain :BuiltEnvironment ;
@@ -88,7 +101,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/bridgesOver
 :bridgesOver rdf:type owl:ObjectProperty ;
-             rdfs:domain :Bridge ;
              rdfs:range :WaterBody .
 
 
@@ -153,7 +165,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/tunnelsThrough
 :tunnelsThrough rdf:type owl:ObjectProperty ;
-                rdfs:domain :Tunnel ;
                 rdfs:range :Landform .
 
 
@@ -218,6 +229,23 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#Cycleway
+:Cycleway rdf:type owl:Class ;
+          rdfs:subClassOf :SingleModeInfrastructure ;
+          terms:source "http://purl.obolibrary.org/obo/ENVO_03500004" ;
+          rdfs:label "Cycleway" ;
+          skos:definition "A constructed pavement which is intended for bicycle traffic." .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Footpath
+:Footpath rdf:type owl:Class ;
+          rdfs:subClassOf :SingleModeInfrastructure ;
+          terms:source "http://purl.obolibrary.org/obo/ENVO_01001279" ;
+          rdfs:label "Footpath" ;
+          skos:definition "A constructed pavement which is built on the side of a road and intended for foot traffic." ;
+          skos:note "In some places, the same term may also be used for a paved path, trail or footpath that is not next to a road, for example, a path through a park." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#Lake
 :Lake rdf:type owl:Class ;
       rdfs:subClassOf :WaterBody ;
@@ -226,12 +254,38 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
       skos:definition "A body of water or other liquid of considerable size contained in a depression on a landmass." .
 
 
+###  http://www.semanticweb.org/diversify-ccam#MixedModeInfrastructure
+:MixedModeInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :TransportInfrastructure .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#Mountain
 :Mountain rdf:type owl:Class ;
           rdfs:subClassOf :Landform ;
           terms:source "http://purl.obolibrary.org/obo/ENVO_00000081" ;
           rdfs:label "Mountain" ;
           skos:example "A landform that extends above the surrounding terrain in a limited area." .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Railway
+:Railway rdf:type owl:Class ;
+         rdfs:subClassOf :SingleModeInfrastructure ;
+         terms:source "http://purl.obolibrary.org/obo/ENVO_00000065" ;
+         rdfs:label "Railway" ;
+         skos:definition "A permanent way having one or more rails which provides a track for cars." .
+
+
+###  http://www.semanticweb.org/diversify-ccam#Roadway
+:Roadway rdf:type owl:Class ;
+         rdfs:subClassOf :SingleModeInfrastructure ;
+         terms:source "http://purl.obolibrary.org/obo/ENVO_00000064" ;
+         rdfs:label "Roadway" ;
+         skos:definition "An open way for the passage of vehicles, persons, or animals on land." .
+
+
+###  http://www.semanticweb.org/diversify-ccam#SingleModeInfrastructure
+:SingleModeInfrastructure rdf:type owl:Class ;
+                          rdfs:subClassOf :TransportInfrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Valley
@@ -247,14 +301,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                   rdfs:subClassOf :Population .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Bridge
-:Bridge rdf:type owl:Class ;
-        rdfs:subClassOf :RoadInfrastructure ;
-        terms:source "https://dictionary.cambridge.org/us/dictionary/english/bridge" ;
-        rdfs:label "Bridge"@en ;
-        skos:definition "A structure that is built over a river, road, or railroad to allow people and vehicles to cross from one side to the other."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/BuiltEnvironment
 :BuiltEnvironment rdf:type owl:Class ;
                   rdfs:subClassOf :Environment ;
@@ -268,14 +314,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 :Climate rdf:type owl:Class ;
          rdfs:label "Climate"@en ;
          skos:definition "The prevailing weather conditions in an area over a long period of time."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/CyclingInfrastructure
-:CyclingInfrastructure rdf:type owl:Class ;
-                       rdfs:subClassOf :TransportInfrastructure ;
-                       rdfs:comment "Existence of safe, connected cycling infrastructure is paramount to induce cycling as the fear of mixed traffic is the main deterrent from cycling. Increased demand for cycling and sustainable transport also calls for providing such infrastructure."@en ;
-                       rdfs:label "Cycling Infrastructure"@en ;
-                       skos:definition "Infrastructure designed for safe and efficient movement of cyclists and parking bicycles."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/DigitalInfrastructure
@@ -345,14 +383,6 @@ and
                 skos:definition "Facilities and systems that support the functioning of society. Infrastructure, including transport infrastructure, requires proper planning as well as systematic construction, maintenance and repair of the various elements in order to fulfil its functions. "@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Intersection
-:Intersection rdf:type owl:Class ;
-              rdfs:subClassOf :RoadInfrastructure ;
-              terms:source "https://trt.trb.org/term/92905" ;
-              rdfs:label "Intersection"@en ;
-              skos:definition "Areas where two or more highways join or cross, within which are included the roadway and roadside facilities for traffic movements in that area."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/LandUseDevelopment
 :LandUseDevelopment rdf:type owl:Class ;
                     rdfs:subClassOf :Morphology ;
@@ -384,14 +414,6 @@ and
                     rdfs:comment "In most contexts, 'natural' is defined by the lack of intervention or influence by humans and their activities. On Earth, most environments fall on a scale between completely natural and anthropised."@en ;
                     rdfs:label "Natural Environment"@en ;
                     skos:definition "An environmental system in which minimal to no anthropisation has occurred and non-human agents are the primary determinants of the system's dynamics and composition."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/PedestrianInfrastructure
-:PedestrianInfrastructure rdf:type owl:Class ;
-                          rdfs:subClassOf :TransportInfrastructure ;
-                          terms:source "https://www.sciencedirect.com/topics/social-sciences/transport-infrastructure" ;
-                          rdfs:label "Pedestrian Infrastructure"@en ;
-                          skos:definition "Pedestrian infrastructure encompasses the physical elements designed to support safe and convenient walking environments, including sidewalks, crosswalks, pedestrian signals, and traffic calming features."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/PlantPopulation
@@ -436,13 +458,6 @@ and
        terms:source "http://purl.obolibrary.org/obo/ENVO_00000022" ;
        rdfs:label "River"@en ;
        skos:definition "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply."@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/RoadInfrastructure
-:RoadInfrastructure rdf:type owl:Class ;
-                    rdfs:subClassOf :TransportInfrastructure ;
-                    rdfs:label "Road Infrustructure"@en ;
-                    skos:definition "Physical structures and facilities constituting the road network, including roads, bridges, tunnels, signage, and drainage systems."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Settlement
@@ -494,14 +509,6 @@ and
                  rdfs:label "Transport system" .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Tunnel
-:Tunnel rdf:type owl:Class ;
-        rdfs:subClassOf :RoadInfrastructure ;
-        terms:source "https://www.oxfordlearnersdictionaries.com/definition/english/tunnel" ;
-        rdfs:label "Tunnel"@en ;
-        skos:definition "A long passage built underground or under water, especially one built to allow vehicles or people to travel through an area that would otherwise be difficult to cross."@en .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/UrbanMakeup
 :UrbanMakeup rdf:type owl:Class ;
              rdfs:subClassOf :Morphology ;
@@ -546,14 +553,6 @@ and
 #################################################################
 #    General axioms
 #################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Bridge
-                :Intersection
-                :Tunnel
-              )
-] .
-
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Climate
