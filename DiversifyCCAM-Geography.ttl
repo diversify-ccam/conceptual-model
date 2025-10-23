@@ -80,6 +80,18 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/diversify-ccam#blocksFlowOf
+:blocksFlowOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :Dam ;
+              rdfs:range :River .
+
+
+###  http://www.semanticweb.org/diversify-ccam#createsResevoir
+:createsResevoir rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Dam ;
+                 rdfs:range :WaterBody .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#hasModes
 :hasModes rdf:type owl:ObjectProperty ;
           owl:inverseOf :inMixedModes ;
@@ -237,6 +249,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           skos:definition "A constructed pavement which is intended for bicycle traffic." .
 
 
+###  http://www.semanticweb.org/diversify-ccam#Dam
+:Dam rdf:type owl:Class ;
+     rdfs:subClassOf :UtilitiesInfrastructure ;
+     terms:source "http://purl.obolibrary.org/obo/ENVO_00000074" ;
+     rdfs:label "Dam" ;
+     skos:definition "A barrier constructed across a watercourse to control the flow or raise the level of water." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#Footpath
 :Footpath rdf:type owl:Class ;
           rdfs:subClassOf :SingleModeInfrastructure ;
@@ -267,6 +287,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
           skos:example "A landform that extends above the surrounding terrain in a limited area." .
 
 
+###  http://www.semanticweb.org/diversify-ccam#PowerPlant
+:PowerPlant rdf:type owl:Class ;
+            rdfs:subClassOf :UtilitiesInfrastructure ;
+            terms:source "http://purl.obolibrary.org/obo/ENVO_00002214" ;
+            rdfs:label "Power Plant" ;
+            skos:definition "A power plant is a building which contains one or more generators which convert mechanical energy into electrical energy through the relative motion between a magnetic field and a conductor. The energy source harnessed to turn the generator varies widely." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam#Railway
 :Railway rdf:type owl:Class ;
          rdfs:subClassOf :SingleModeInfrastructure ;
@@ -286,6 +314,11 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam#SingleModeInfrastructure
 :SingleModeInfrastructure rdf:type owl:Class ;
                           rdfs:subClassOf :TransportInfrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam#UtilitiesInfrastructure
+:UtilitiesInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :Infrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam#Valley
