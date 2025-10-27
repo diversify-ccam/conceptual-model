@@ -80,40 +80,27 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#blocksFlowOf
-:blocksFlowOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Dam ;
-              rdfs:range :River .
-
-
-###  http://www.semanticweb.org/diversify-ccam#createsResevoir
-:createsResevoir rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Dam ;
-                 rdfs:range :WaterBody .
-
-
-###  http://www.semanticweb.org/diversify-ccam#hasModes
-:hasModes rdf:type owl:ObjectProperty ;
-          owl:inverseOf :inMixedModes ;
-          rdfs:domain :MixedModeInfrastructure ;
-          rdfs:range :SingleModeInfrastructure .
-
-
-###  http://www.semanticweb.org/diversify-ccam#inMixedModes
-:inMixedModes rdf:type owl:ObjectProperty ;
-              rdfs:domain :SingleModeInfrastructure ;
-              rdfs:range :MixedModeInfrastructure .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/administratedBy
 :administratedBy rdf:type owl:ObjectProperty ;
                  rdfs:domain :BuiltEnvironment ;
                  rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
 
 
+###  http://www.semanticweb.org/diversify-ccam/blocksFlowOf
+:blocksFlowOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :Dam ;
+              rdfs:range :River .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/bridgesOver
 :bridgesOver rdf:type owl:ObjectProperty ;
              rdfs:range :WaterBody .
+
+
+###  http://www.semanticweb.org/diversify-ccam/createsResevoir
+:createsResevoir rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Dam ;
+                 rdfs:range :WaterBody .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/existsIn
@@ -150,6 +137,13 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                    rdfs:range :Infrastructure .
 
 
+###  http://www.semanticweb.org/diversify-ccam/hasModes
+:hasModes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :inMixedModes ;
+          rdfs:domain :MixedModeInfrastructure ;
+          rdfs:range :SingleModeInfrastructure .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/hasMorphology
 :hasMorphology rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
@@ -167,6 +161,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain :NaturalEnvironment ;
                rdfs:range :Topography .
+
+
+###  http://www.semanticweb.org/diversify-ccam/inMixedModes
+:inMixedModes rdf:type owl:ObjectProperty ;
+              rdfs:domain :SingleModeInfrastructure ;
+              rdfs:range :MixedModeInfrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/sharesInfrastructure
@@ -241,107 +241,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#Cycleway
-:Cycleway rdf:type owl:Class ;
-          rdfs:subClassOf :SingleModeInfrastructure ;
-          terms:source "http://purl.obolibrary.org/obo/ENVO_03500004" ;
-          rdfs:label "Cycleway" ;
-          skos:definition "A constructed pavement which is intended for bicycle traffic." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Dam
-:Dam rdf:type owl:Class ;
-     rdfs:subClassOf :UtilitiesInfrastructure ;
-     terms:source "http://purl.obolibrary.org/obo/ENVO_00000074" ;
-     rdfs:label "Dam" ;
-     skos:definition "A barrier constructed across a watercourse to control the flow or raise the level of water." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Footpath
-:Footpath rdf:type owl:Class ;
-          rdfs:subClassOf :SingleModeInfrastructure ;
-          terms:source "http://purl.obolibrary.org/obo/ENVO_01001279" ;
-          rdfs:label "Footpath" ;
-          skos:definition "A constructed pavement which is built on the side of a road and intended for foot traffic." ;
-          skos:note "In some places, the same term may also be used for a paved path, trail or footpath that is not next to a road, for example, a path through a park." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Lake
-:Lake rdf:type owl:Class ;
-      rdfs:subClassOf :WaterBody ;
-      terms:source "http://purl.obolibrary.org/obo/ENVO_00000020" ;
-      rdfs:label "Lake" ;
-      skos:definition "A body of water or other liquid of considerable size contained in a depression on a landmass." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#LeisureInfrastructure
-:LeisureInfrastructure rdf:type owl:Class ;
-                       rdfs:subClassOf :Infrastructure .
-
-
-###  http://www.semanticweb.org/diversify-ccam#MixedModeInfrastructure
-:MixedModeInfrastructure rdf:type owl:Class ;
-                         rdfs:subClassOf :TransportInfrastructure .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Mountain
-:Mountain rdf:type owl:Class ;
-          rdfs:subClassOf :Landform ;
-          terms:source "http://purl.obolibrary.org/obo/ENVO_00000081" ;
-          rdfs:label "Mountain" ;
-          skos:example "A landform that extends above the surrounding terrain in a limited area." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Park
-:Park rdf:type owl:Class ;
-      rdfs:subClassOf :LeisureInfrastructure ;
-      terms:source "http://purl.obolibrary.org/obo/ENVO_00000562" ;
-      rdfs:label "Park" ;
-      skos:definition "A bounded area of land, or water, usually in its natural or semi-natural (landscaped) state and set aside for some purpose, usually to do with recreation or conservation." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#PowerPlant
-:PowerPlant rdf:type owl:Class ;
-            rdfs:subClassOf :UtilitiesInfrastructure ;
-            terms:source "http://purl.obolibrary.org/obo/ENVO_00002214" ;
-            rdfs:label "Power Plant" ;
-            skos:definition "A power plant is a building which contains one or more generators which convert mechanical energy into electrical energy through the relative motion between a magnetic field and a conductor. The energy source harnessed to turn the generator varies widely." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Railway
-:Railway rdf:type owl:Class ;
-         rdfs:subClassOf :SingleModeInfrastructure ;
-         terms:source "http://purl.obolibrary.org/obo/ENVO_00000065" ;
-         rdfs:label "Railway" ;
-         skos:definition "A permanent way having one or more rails which provides a track for cars." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Roadway
-:Roadway rdf:type owl:Class ;
-         rdfs:subClassOf :SingleModeInfrastructure ;
-         terms:source "http://purl.obolibrary.org/obo/ENVO_00000064" ;
-         rdfs:label "Roadway" ;
-         skos:definition "An open way for the passage of vehicles, persons, or animals on land." .
-
-
-###  http://www.semanticweb.org/diversify-ccam#SingleModeInfrastructure
-:SingleModeInfrastructure rdf:type owl:Class ;
-                          rdfs:subClassOf :TransportInfrastructure .
-
-
-###  http://www.semanticweb.org/diversify-ccam#UtilitiesInfrastructure
-:UtilitiesInfrastructure rdf:type owl:Class ;
-                         rdfs:subClassOf :Infrastructure .
-
-
-###  http://www.semanticweb.org/diversify-ccam#Valley
-:Valley rdf:type owl:Class ;
-        rdfs:subClassOf :Landform ;
-        terms:source "http://purl.obolibrary.org/obo/ENVO_00000100" ;
-        rdfs:label "Valley" ;
-        skos:definition "A depression which has been formed as a result of erosion by water or ice and which is low-lying, bordered by higher ground, and especially elongate." .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/AnimalPopulation
 :AnimalPopulation rdf:type owl:Class ;
                   rdfs:subClassOf :Population .
@@ -360,6 +259,22 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 :Climate rdf:type owl:Class ;
          rdfs:label "Climate"@en ;
          skos:definition "The prevailing weather conditions in an area over a long period of time."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Cycleway
+:Cycleway rdf:type owl:Class ;
+          rdfs:subClassOf :SingleModeInfrastructure ;
+          terms:source "http://purl.obolibrary.org/obo/ENVO_03500004" ;
+          rdfs:label "Cycleway" ;
+          skos:definition "A constructed pavement which is intended for bicycle traffic." .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Dam
+:Dam rdf:type owl:Class ;
+     rdfs:subClassOf :UtilitiesInfrastructure ;
+     terms:source "http://purl.obolibrary.org/obo/ENVO_00000074" ;
+     rdfs:label "Dam" ;
+     skos:definition "A barrier constructed across a watercourse to control the flow or raise the level of water." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/DigitalInfrastructure
@@ -386,7 +301,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/Environment
 :Environment rdf:type owl:Class ;
-             rdfs:subClassOf :Geography ;
              terms:source """Based on: https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/termsandacronyms/search.do?checkedAcronym=true&checkedTerm=true&hasDefinitions=false&matchCriteria=Exact&search=&term=environment
 
 and
@@ -403,10 +317,13 @@ and
      skos:definition "A suspension of very small, usually microscopic water droplets in the air, reducing visibility at the Earth's surface."@en .
 
 
-###  http://www.semanticweb.org/diversify-ccam/Geography
-:Geography rdf:type owl:Class ;
-           rdfs:label "Geography"@en ;
-           skos:definition "The physical position of an area and its influence on access to transportation systems and infrastructure. It considers factors such as proximity to major roads, railways and public transit networks."@en .
+###  http://www.semanticweb.org/diversify-ccam/Footpath
+:Footpath rdf:type owl:Class ;
+          rdfs:subClassOf :SingleModeInfrastructure ;
+          terms:source "http://purl.obolibrary.org/obo/ENVO_01001279" ;
+          rdfs:label "Footpath" ;
+          skos:definition "A constructed pavement which is built on the side of a road and intended for foot traffic." ;
+          skos:note "In some places, the same term may also be used for a paved path, trail or footpath that is not next to a road, for example, a path through a park." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Hill
@@ -429,6 +346,14 @@ and
                 skos:definition "Facilities and systems that support the functioning of society. Infrastructure, including transport infrastructure, requires proper planning as well as systematic construction, maintenance and repair of the various elements in order to fulfil its functions. "@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Lake
+:Lake rdf:type owl:Class ;
+      rdfs:subClassOf :WaterBody ;
+      terms:source "http://purl.obolibrary.org/obo/ENVO_00000020" ;
+      rdfs:label "Lake" ;
+      skos:definition "A body of water or other liquid of considerable size contained in a depression on a landmass." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/LandUseDevelopment
 :LandUseDevelopment rdf:type owl:Class ;
                     rdfs:subClassOf :Morphology ;
@@ -446,11 +371,28 @@ and
           skos:definition "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/LeisureInfrastructure
+:LeisureInfrastructure rdf:type owl:Class ;
+                       rdfs:subClassOf :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/MixedModeInfrastructure
+:MixedModeInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :TransportInfrastructure .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Morphology
 :Morphology rdf:type owl:Class ;
-            rdfs:subClassOf :Geography ;
             rdfs:label "Morphology"@en ;
             skos:definition "The physical and spatial structure and characteristics (e.g. density, size, location) of human settlements within a specific geographical area/site. It refers to land use in relation to different functions (e.g. residential, commercial, and transport functions)."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Mountain
+:Mountain rdf:type owl:Class ;
+          rdfs:subClassOf :Landform ;
+          terms:source "http://purl.obolibrary.org/obo/ENVO_00000081" ;
+          rdfs:label "Mountain" ;
+          skos:example "A landform that extends above the surrounding terrain in a limited area." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/NaturalEnvironment
@@ -462,14 +404,29 @@ and
                     skos:definition "An environmental system in which minimal to no anthropisation has occurred and non-human agents are the primary determinants of the system's dynamics and composition."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Park
+:Park rdf:type owl:Class ;
+      rdfs:subClassOf :LeisureInfrastructure ;
+      terms:source "http://purl.obolibrary.org/obo/ENVO_00000562" ;
+      rdfs:label "Park" ;
+      skos:definition "A bounded area of land, or water, usually in its natural or semi-natural (landscaped) state and set aside for some purpose, usually to do with recreation or conservation." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/PlantPopulation
 :PlantPopulation rdf:type owl:Class ;
                  rdfs:subClassOf :Population .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Population
-:Population rdf:type owl:Class ;
-            rdfs:subClassOf :Geography .
+:Population rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/PowerPlant
+:PowerPlant rdf:type owl:Class ;
+            rdfs:subClassOf :UtilitiesInfrastructure ;
+            terms:source "http://purl.obolibrary.org/obo/ENVO_00002214" ;
+            rdfs:label "Power Plant" ;
+            skos:definition "A power plant is a building which contains one or more generators which convert mechanical energy into electrical energy through the relative motion between a magnetic field and a conductor. The energy source harnessed to turn the generator varies widely." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Precipitation
@@ -491,6 +448,14 @@ and
               rdfs:subClassOf :TransportSystem .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Railway
+:Railway rdf:type owl:Class ;
+         rdfs:subClassOf :SingleModeInfrastructure ;
+         terms:source "http://purl.obolibrary.org/obo/ENVO_00000065" ;
+         rdfs:label "Railway" ;
+         skos:definition "A permanent way having one or more rails which provides a track for cars." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Rain
 :Rain rdf:type owl:Class ;
       rdfs:subClassOf :Precipitation ;
@@ -506,12 +471,25 @@ and
        skos:definition "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply."@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/Roadway
+:Roadway rdf:type owl:Class ;
+         rdfs:subClassOf :SingleModeInfrastructure ;
+         terms:source "http://purl.obolibrary.org/obo/ENVO_00000064" ;
+         rdfs:label "Roadway" ;
+         skos:definition "An open way for the passage of vehicles, persons, or animals on land." .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/Settlement
 :Settlement rdf:type owl:Class ;
             rdfs:subClassOf :BuiltEnvironment ;
             terms:source "Based on: https://www.oxfordlearnersdictionaries.com/definition/english/settlement" ;
             rdfs:label "Settlement"@en ;
             skos:definition "A settlement is a place where people establish a living area, including residential, commercial, and social structures, ranging from small villages to large cities."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/SingleModeInfrastructure
+:SingleModeInfrastructure rdf:type owl:Class ;
+                          rdfs:subClassOf :TransportInfrastructure .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/SiteDensity
@@ -560,6 +538,19 @@ and
              rdfs:subClassOf :Morphology ;
              rdfs:label "Urban Makeup"@en ;
              skos:definition "The makeup of structures within a built site.  "@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/UtilitiesInfrastructure
+:UtilitiesInfrastructure rdf:type owl:Class ;
+                         rdfs:subClassOf :Infrastructure .
+
+
+###  http://www.semanticweb.org/diversify-ccam/Valley
+:Valley rdf:type owl:Class ;
+        rdfs:subClassOf :Landform ;
+        terms:source "http://purl.obolibrary.org/obo/ENVO_00000100" ;
+        rdfs:label "Valley" ;
+        skos:definition "A depression which has been formed as a result of erosion by water or ice and which is low-lying, bordered by higher ground, and especially elongate." .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/WaterBody
