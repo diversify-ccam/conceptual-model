@@ -169,12 +169,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
               rdfs:range :MixedModeInfrastructure .
 
 
-###  http://www.semanticweb.org/diversify-ccam/sharesInfrastructure
-:sharesInfrastructure rdf:type owl:ObjectProperty ;
-                      rdfs:domain :TransportInfrastructure ;
-                      rdfs:range :TransportInfrastructure .
-
-
 ###  http://www.semanticweb.org/diversify-ccam/tunnelsThrough
 :tunnelsThrough rdf:type owl:ObjectProperty ;
                 rdfs:range :Landform .
@@ -184,57 +178,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 :usesInfrastructure rdf:type owl:ObjectProperty ;
                     rdfs:domain :TransportSystem ;
                     rdfs:range :TransportInfrastructure .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://www.semanticweb.org/diversify-ccam/depth
-:depth rdf:type owl:DatatypeProperty ;
-       rdfs:range xsd:int ;
-       rdfs:label "depth"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/easeOfProcess
-:easeOfProcess rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string ;
-               rdfs:label "ease of process"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/faultTolerance
-:faultTolerance rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:string ;
-                rdfs:label "fault tolerance"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/interregionalCooperation
-:interregionalCooperation rdf:type owl:DatatypeProperty ;
-                          rdfs:label "interregional cooperation"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/nrOfStakeholders
-:nrOfStakeholders rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:int ;
-                  rdfs:label "nr of stakeholders"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/riskAversion
-:riskAversion rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string ;
-              rdfs:label "risk aversion"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/riskOfBlockage
-:riskOfBlockage rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:string ;
-                rdfs:label "risk of blockage"@en .
-
-
-###  http://www.semanticweb.org/diversify-ccam/term
-:term rdf:type owl:DatatypeProperty ;
-      rdfs:range xsd:string ;
-      rdfs:label "term"@en .
 
 
 #################################################################
