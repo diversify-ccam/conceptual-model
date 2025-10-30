@@ -80,28 +80,28 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify-ccam#hasLanguage
+###  http://www.semanticweb.org/diversify-ccam/hasBelief
+:hasBelief rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Belief .
+
+
+###  http://www.semanticweb.org/diversify-ccam/hasLanguage
 :hasLanguage rdf:type owl:ObjectProperty ;
              rdfs:domain :Culture ;
              rdfs:range :Language .
 
 
-###  http://www.semanticweb.org/diversify-ccam#hasNorm
+###  http://www.semanticweb.org/diversify-ccam/hasNorm
 :hasNorm rdf:type owl:ObjectProperty ;
          rdfs:domain :Culture ;
          rdfs:range :Norm .
 
 
-###  http://www.semanticweb.org/diversify-ccam#hasSymbol
+###  http://www.semanticweb.org/diversify-ccam/hasSymbol
 :hasSymbol rdf:type owl:ObjectProperty ;
            rdfs:domain :Culture ;
            rdfs:range :Symbol .
-
-
-###  http://www.semanticweb.org/diversify-ccam/hasBelief
-:hasBelief rdf:type owl:ObjectProperty ;
-           rdfs:domain :Culture ;
-           rdfs:range :Belief .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/hasValue
@@ -119,24 +119,6 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://www.semanticweb.org/diversify-ccam#hasTimePeriod
-:hasTimePeriod rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Culture ;
-               rdfs:range xsd:duration .
-
-
-###  http://www.semanticweb.org/diversify-ccam#isFlexible
-:isFlexible rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Law ;
-            rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/diversify-ccam#targetDomain
-:targetDomain rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Law ;
-              rdfs:range xsd:string .
-
 
 ###  http://www.semanticweb.org/diversify-ccam/depth
 :depth rdf:type owl:DatatypeProperty ;
@@ -159,10 +141,22 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                 rdfs:label "fault tolerance"@en .
 
 
+###  http://www.semanticweb.org/diversify-ccam/hasTimePeriod
+:hasTimePeriod rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Culture ;
+               rdfs:range xsd:duration .
+
+
 ###  http://www.semanticweb.org/diversify-ccam/interregionalCooperation
 :interregionalCooperation rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Federalism ;
                           rdfs:label "interregional cooperation"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/isFlexible
+:isFlexible rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Law ;
+            rdfs:range xsd:boolean .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/nrOfStakeholders
@@ -184,6 +178,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
                 rdfs:domain :Bureaucracy ;
                 rdfs:range xsd:string ;
                 rdfs:label "risk of blockage"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/targetDomain
+:targetDomain rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Law ;
+              rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/term
@@ -208,11 +208,15 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/diversify-ccam/Attitude
 :Attitude rdf:type owl:Class ;
           terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
+          rdfs:label "Attitude"@en ;
           skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Belief
-:Belief rdf:type owl:Class .
+:Belief rdf:type owl:Class ;
+        terms:source "Based on: http://www.purl.org/drammar#Belief"@en ;
+        rdfs:label "Belief"@en ;
+        skos:definition "A mental attitude of an person or a group toward a proposition, which the person may treat as true (even if it is not), and which the person uses as part of reasoning, planning or behaviour."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Bureaucracy
@@ -223,7 +227,9 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/diversify-ccam/CulturalEntity
 :CulturalEntity rdf:type owl:Class ;
-                rdfs:label "Cultural Entity"@en .
+                terms:source "Based on: https://www.mdpi.com/2571-9408/1/2/26"@en ;
+                rdfs:label "Cultural Entity"@en ;
+                skos:definition "An item of cultural heritage—tangible or intangible—that is recognised for its historical, social or cultural value and whose documentation, management or conservation can be described."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Culture
@@ -254,12 +260,17 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Language
-:Language rdf:type owl:Class .
+:Language rdf:type owl:Class ;
+          rdfs:label "Language"@en ;
+          skos:definition "A structured system of communication using symbols (spoken, written or signed) and conventions shared by a community or agent, enabling expression, interpretation and exchange of information."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Law
 :Law rdf:type owl:Class ;
-     rdfs:subClassOf :Norm .
+     rdfs:subClassOf :Norm ;
+     terms:source "Based on: https://voegelinview.com/legal-ontology-does-the-law-exist/"@en ;
+     rdfs:label "Law"@en ;
+     skos:definition "A system of rules or norms, constituted by authority and reason, that governs, regulates, and binds the behavior of individuals and entities within a community to promote order and the common good."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Leadership
@@ -269,7 +280,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Norm
-:Norm rdf:type owl:Class .
+:Norm rdf:type owl:Class ;
+      terms:source "Based on: https://bp4mc2.org/def/skos-lex?utm_source=chatgpt.com"@en ;
+      rdfs:label "Norm"@en ;
+      skos:definition "A rule or standard that influences or constrains an action (an Act)"@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/PlanningCulture
@@ -287,7 +301,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Symbol
-:Symbol rdf:type owl:Class .
+:Symbol rdf:type owl:Class ;
+        terms:source "Based on: https://br0ast.github.io/ICON/ICONOntologyDocumentationcurrent/index-en.html#Symbol"@en ;
+        rdfs:label "Symbol"@en ;
+        skos:definition "An entity that represents or stands for another entity, concept, or relation within a shared conceptualization, enabling communication and reasoning over knowledge expressed in an ontology."@en .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Trust
@@ -299,7 +316,10 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/diversify-ccam/Value
-:Value rdf:type owl:Class .
+:Value rdf:type owl:Class ;
+       terms:source "Based on: https://sigma.ontologyportal.org:8443/sigma/WordNet.jsp?word=value&POS=1"@en ;
+       rdfs:label "Value"@en ;
+       skos:definition "A property or characteristic that something has which can be assessed or measured to indicate desirability, worth, or importance."@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
