@@ -1,0 +1,141 @@
+@prefix : <http://www.semanticweb.org/diversify-ccam/ontologies/connector/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/diversify-ccam/ontologies/connector/> .
+
+<http://www.semanticweb.org/diversify-ccam/ontologies/connector> rdf:type owl:Ontology ;
+                                                                  owl:imports <http://www.semanticweb.org/diversify-ccam/ontologies/culture> ,
+                                                                              <http://www.semanticweb.org/diversify-ccam/ontologies/geography> ,
+                                                                              <http://www.semanticweb.org/diversify-ccam/ontologies/policy> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#administrates
+:administrates rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :inhabits ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( <http://www.semanticweb.org/diversify-ccam/ontologies/policy/DecisionMaker>
+                                           <http://www.semanticweb.org/diversify-ccam/ontologies/policy/Planner>
+                                         )
+                           ] ;
+               rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#alignedWith
+:alignedWith rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/culture/Value> ;
+             rdfs:range <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#cultureOf
+:cultureOf rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/culture/Culture> ;
+           rdfs:range <http://www.semanticweb.org/diversify-ccam/ontologies/geography/HumanPopulation> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#funds
+:funds rdf:type owl:ObjectProperty ;
+       rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/policy/FinancialResourceAllocation> ;
+       rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( <http://www.semanticweb.org/diversify-ccam/ontologies/geography/Infrastructure>
+                                  <http://www.semanticweb.org/diversify-ccam/ontologies/geography/TransportSystem>
+                                )
+                  ] .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#hasCoverage
+:hasCoverage rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/geography/TransportSystem> ;
+             rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#inhabits
+:inhabits rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> ;
+          rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/geography/TransportSystem> ;
+           rdfs:range <http://www.semanticweb.org/diversify-ccam/ontologies/policy/TransportOperator> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#residesIn
+:residesIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :inhabits ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( <http://www.semanticweb.org/diversify-ccam/ontologies/policy/Community>
+                                       <http://www.semanticweb.org/diversify-ccam/ontologies/policy/EndUser>
+                                     )
+                       ] ;
+           rdfs:range <https://saref.etsi.org/saref4city/AdministrativeArea> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/isFinancedBy
+<http://www.semanticweb.org/diversify-ccam/ontologies/policy/isFinancedBy> rdfs:domain [ rdf:type owl:Class ;
+                                                                                         owl:unionOf ( <http://www.semanticweb.org/diversify-ccam/ontologies/geography/TransportSystem>
+                                                                                                       <http://www.semanticweb.org/diversify-ccam/ontologies/policy/NonFinancialTool>
+                                                                                                     )
+                                                                                       ] ;
+                                                                           rdfs:range <http://www.semanticweb.org/diversify-ccam/ontologies/policy/FinancialResourceAllocation> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#hasSchedule
+:hasSchedule rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://www.semanticweb.org/diversify-ccam/ontologies/geography/TransportSystem> ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#TransportMode
+:TransportMode rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Bus
+:Bus rdf:type owl:NamedIndividual ,
+              :TransportMode .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Funicular
+:Funicular rdf:type owl:NamedIndividual ,
+                    :TransportMode .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Metro
+:Metro rdf:type owl:NamedIndividual ,
+                :TransportMode .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Train
+:Train rdf:type owl:NamedIndividual ,
+                :TransportMode .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Tram
+:Tram rdf:type owl:NamedIndividual ,
+               :TransportMode .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/connector#Trolley
+:Trolley rdf:type owl:NamedIndividual ,
+                  :TransportMode .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

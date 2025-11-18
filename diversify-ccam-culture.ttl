@@ -1,0 +1,315 @@
+@prefix : <http://www.semanticweb.org/diversify-ccam/ontologies/culture/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@base <http://www.semanticweb.org/diversify-ccam/ontologies/culture/> .
+
+<http://www.semanticweb.org/diversify-ccam/ontologies/culture> rdf:type owl:Ontology ;
+                                                                rdfs:comment "This is version v0.1 of the DiversifyCCAM comceptual model." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/decription
+dc:decription rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+terms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+terms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+terms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasBelief
+:hasBelief rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Belief .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasLanguage
+:hasLanguage rdf:type owl:ObjectProperty ;
+             rdfs:domain :Culture ;
+             rdfs:range :Language .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasNorm
+:hasNorm rdf:type owl:ObjectProperty ;
+         rdfs:domain :Culture ;
+         rdfs:range :Norm .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasSymbol
+:hasSymbol rdf:type owl:ObjectProperty ;
+           rdfs:domain :Culture ;
+           rdfs:range :Symbol .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :Value .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Culture ;
+          rdfs:range :CulturalEntity .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/depth
+:depth rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Leadership ;
+       rdfs:range xsd:int ;
+       rdfs:label "depth"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/easeOfProcess
+:easeOfProcess rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Bureaucracy ;
+               rdfs:range xsd:string ;
+               rdfs:label "ease of process"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/faultTolerance
+:faultTolerance rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PlanningCulture ;
+                rdfs:range xsd:string ;
+                rdfs:label "fault tolerance"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/hasTimePeriod
+:hasTimePeriod rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Culture ;
+               rdfs:range xsd:duration .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/interregionalCooperation
+:interregionalCooperation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Federalism ;
+                          rdfs:label "interregional cooperation"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/isFlexible
+:isFlexible rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Law ;
+            rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/nrOfStakeholders
+:nrOfStakeholders rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Bureaucracy ;
+                  rdfs:range xsd:int ;
+                  rdfs:label "nr of stakeholders"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/riskAversion
+:riskAversion rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PlanningCulture ;
+              rdfs:range xsd:string ;
+              rdfs:label "risk aversion"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/riskOfBlockage
+:riskOfBlockage rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Bureaucracy ;
+                rdfs:range xsd:string ;
+                rdfs:label "risk of blockage"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/targetDomain
+:targetDomain rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Law ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/term
+:term rdf:type owl:DatatypeProperty ;
+      rdfs:domain :PlanningCulture ;
+      rdfs:range xsd:string ;
+      rdfs:label "term"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Adherence
+:Adherence rdf:type owl:Class ;
+           rdfs:subClassOf :Attitude ;
+           terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000377253}" ;
+           rdfs:label "Adherence"@en ;
+           skos:definition "The conscious and voluntary commitment to follow, uphold, or respect certain principles, values, norms, or practices, often within a cultural, ethical, or educational framework."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Attitude
+:Attitude rdf:type owl:Class ;
+          terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000232993" ;
+          skos:definition "Attitudes refer to a set of values and beliefs that individuals hold, which affect how they respond to various issues and interact with others. These include openness to others, respect for diversity, and a sense of common humanity."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Belief
+:Belief rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Bureaucracy
+:Bureaucracy rdf:type owl:Class ;
+             rdfs:subClassOf :GovernanceCulture ;
+             rdfs:label "Bureaucracy"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/CulturalEntity
+:CulturalEntity rdf:type owl:Class ;
+                rdfs:label "Cultural Entity"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Culture
+:Culture rdf:type owl:Class ;
+         terms:source "https://unesdoc.unesco.org/ark:/48223/pf0000184755" ;
+         rdfs:label "Culture"@en ;
+         skos:definition "Culture should be regarded as the set of distinctive spiritual, material, intellectual and emotional features of society or a social group... it encompasses, in addition to art and literature, lifestyles, ways of living together, value systems, traditions and beliefs."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Federalism
+:Federalism rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Federalism"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/GovernanceCulture
+:GovernanceCulture rdf:type owl:Class ;
+                   rdfs:subClassOf :Culture ;
+                   rdfs:label "Governance Culture"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Identity
+:Identity rdf:type owl:Class ;
+          rdfs:subClassOf :Attitude ;
+          terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000159252}"@en ;
+          rdfs:label "Identity"@en ;
+          skos:definition "The set of characteristics, values, affiliations, and experiences that define an individual or group, often shaped by culture, history, language, and social context."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Language
+:Language rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Law
+:Law rdf:type owl:Class ;
+     rdfs:subClassOf :Norm .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Leadership
+:Leadership rdf:type owl:Class ;
+            rdfs:subClassOf :GovernanceCulture ;
+            rdfs:label "Leadership"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Norm
+:Norm rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/PlanningCulture
+:PlanningCulture rdf:type owl:Class ;
+                 rdfs:subClassOf :GovernanceCulture ;
+                 rdfs:label "Planning Culture"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Satisfaction
+:Satisfaction rdf:type owl:Class ;
+              rdfs:subClassOf :Attitude ;
+              terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000367416}" ;
+              rdfs:label "Satisfaction"@en ;
+              skos:definition "The perceived degree to which personal or collective expectations related to cultural engagement, education, or life quality are met.e"@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Symbol
+:Symbol rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Trust
+:Trust rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude ;
+       terms:source "Based on: {https://unesdoc.unesco.org/ark:/48223/pf0000377253}" ;
+       rdfs:label "Trust"@en ;
+       skos:definition "The degree to which individuals or communities perceive institutions as legitimate, transparent, accountable, and serving the public good."@en .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/culture/Value
+:Value rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

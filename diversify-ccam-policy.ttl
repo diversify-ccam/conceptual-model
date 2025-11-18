@@ -1,48 +1,48 @@
-@prefix : <http://www.semanticweb.org/diversify/ontologies/2025/7/policy/> .
+@prefix : <http://www.semanticweb.org/diversify-ccam/ontologies/policy/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/diversify/ontologies/2025/7/policy/> .
+@base <http://www.semanticweb.org/diversify-ccam/ontologies/policy/> .
 
-<http://www.semanticweb.org/diversify/ontologies/2025/7/policy> rdf:type owl:Ontology .
+<http://www.semanticweb.org/diversify-ccam/ontologies/policy> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/engages
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/engages
 :engages rdf:type owl:ObjectProperty ;
          owl:inverseOf :engagesIn .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/engagesIn
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/engagesIn
 :engagesIn rdf:type owl:ObjectProperty ;
            rdfs:domain <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> ;
            rdfs:range :Engagement .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/finances
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/finances
 :finances rdf:type owl:ObjectProperty ;
           owl:inverseOf :finances ;
           rdfs:domain :NonFinancialTool ;
-          rdfs:range :ResourceAllocation .
+          rdfs:range :FinancialResourceAllocation .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/isFinancedBy
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/isFinancedBy
 :isFinancedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :ResourceAllocation ;
+              rdfs:domain :FinancialResourceAllocation ;
               rdfs:range :NonFinancialTool .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/partOf
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/partOf
 :partOf rdf:type owl:ObjectProperty ;
         rdfs:domain :EndUser ;
         rdfs:range :Community .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/usesChannel
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/usesChannel
 :usesChannel rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              rdfs:domain :Engagement ;
@@ -92,31 +92,31 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/allowsFeedback
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/allowsFeedback
 :allowsFeedback rdf:type owl:DatatypeProperty ;
                 rdfs:domain :EngagementChannel ;
                 rdfs:range xsd:boolean .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/isPublic
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/isPublic
 :isPublic rdf:type owl:DatatypeProperty ;
           rdfs:domain <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> ;
           rdfs:range xsd:boolean .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/mindset
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/mindset
 :mindset rdf:type owl:DatatypeProperty ;
          rdfs:domain :DecisionMaker ;
          rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/politicalWill
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/politicalWill
 :politicalWill rdf:type owl:DatatypeProperty ;
                rdfs:domain :DecisionMaker ;
                rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/vision
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/vision
 :vision rdf:type owl:DatatypeProperty ;
         rdfs:domain :DecisionMaker ;
         rdfs:range xsd:string .
@@ -126,244 +126,244 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Accessibility
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Accessibility
 :Accessibility rdf:type owl:Class ;
                rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/ActiveMobility
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/ActiveMobility
 :ActiveMobility rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/AdjustmentOfTrafficLightCycles
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/AdjustmentOfTrafficLightCycles
 :AdjustmentOfTrafficLightCycles rdf:type owl:Class ;
                                 rdfs:subClassOf :PullMeasure ,
                                                 :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/BehaviourChange
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/BehaviourChange
 :BehaviourChange rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/CarBans
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/CarBans
 :CarBans rdf:type owl:Class ;
          rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/CarFreeMobility
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/CarFreeMobility
 :CarFreeMobility rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Policy> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/CarLimitedZones
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/CarLimitedZones
 :CarLimitedZones rdf:type owl:Class ;
                  rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Collaboration
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Collaboration
 :Collaboration rdf:type owl:Class ;
                rdfs:subClassOf :Engagement .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/ComfortableStopsAndSurroundings
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/ComfortableStopsAndSurroundings
 :ComfortableStopsAndSurroundings rdf:type owl:Class ;
                                  rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Communication
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Communication
 :Communication rdf:type owl:Class ;
                rdfs:subClassOf :Engagement .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Community
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Community
 :Community rdf:type owl:Class ;
            rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/CongestionManagement
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/CongestionManagement
 :CongestionManagement rdf:type owl:Class ;
                       rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Coordination
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Coordination
 :Coordination rdf:type owl:Class ;
               rdfs:subClassOf :Engagement .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/CycleNetworks
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/CycleNetworks
 :CycleNetworks rdf:type owl:Class ;
                rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/DecisionMaker
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/DecisionMaker
 :DecisionMaker rdf:type owl:Class ;
                rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EfficientGovernance
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EfficientGovernance
 :EfficientGovernance rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EndUser
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EndUser
 :EndUser rdf:type owl:Class ;
          rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EnforcementAndPenalising
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EnforcementAndPenalising
 :EnforcementAndPenalising rdf:type owl:Class ;
                           rdfs:subClassOf :PullMeasure ,
                                           :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Engagement
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Engagement
 :Engagement rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EngagementChannel
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EngagementChannel
 :EngagementChannel rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EnvironmentFriendliness
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EnvironmentFriendliness
 :EnvironmentFriendliness rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/EquityAndInclusivity
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/EquityAndInclusivity
 :EquityAndInclusivity rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/HighServiceFrequency
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/FinancialResourceAllocation
+:FinancialResourceAllocation rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Tool> .
+
+
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/HighServiceFrequency
 :HighServiceFrequency rdf:type owl:Class ;
                       rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Investment
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Investment
 :Investment rdf:type owl:Class ;
-            rdfs:subClassOf :ResourceAllocation .
+            rdfs:subClassOf :FinancialResourceAllocation .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/NonFinancialTool
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/NonFinancialTool
 :NonFinancialTool rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Tool> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/ParkAndRide
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/ParkAndRide
 :ParkAndRide rdf:type owl:Class ;
              rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/ParkingManagement
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/ParkingManagement
 :ParkingManagement rdf:type owl:Class ;
                    rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PedestrianConnections
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PedestrianConnections
 :PedestrianConnections rdf:type owl:Class ;
                        rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Planner
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Planner
 :Planner rdf:type owl:Class ;
          rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PrivateCars
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PrivateCars
 :PrivateCars rdf:type owl:Class ;
              rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Policy> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PromotionOfRenewableEnergy
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PromotionOfRenewableEnergy
 :PromotionOfRenewableEnergy rdf:type owl:Class ;
                             rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Policy> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PublicAwarenessCampaign
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PublicAwarenessCampaign
 :PublicAwarenessCampaign rdf:type owl:Class ;
                          rdfs:subClassOf :PullMeasure ,
                                          :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PublicTransportPriority
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PublicTransportPriority
 :PublicTransportPriority rdf:type owl:Class ;
                          rdfs:subClassOf :PullMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PullMeasure
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PullMeasure
 :PullMeasure rdf:type owl:Class ;
              rdfs:subClassOf :NonFinancialTool .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/PushMeasure
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/PushMeasure
 :PushMeasure rdf:type owl:Class ;
              rdfs:subClassOf :NonFinancialTool .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/RedistributionOfRoadSpace
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/RedistributionOfRoadSpace
 :RedistributionOfRoadSpace rdf:type owl:Class ;
                            rdfs:subClassOf :PullMeasure ,
                                            :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/ResourceAllocation
-:ResourceAllocation rdf:type owl:Class ;
-                    rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Tool> .
-
-
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/RoadPricing
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/RoadPricing
 :RoadPricing rdf:type owl:Class ;
              rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/SpeedReduction
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/SpeedReduction
 :SpeedReduction rdf:type owl:Class ;
                 rdfs:subClassOf :PushMeasure .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Subsidy
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Subsidy
 :Subsidy rdf:type owl:Class ;
-         rdfs:subClassOf :ResourceAllocation .
+         rdfs:subClassOf :FinancialResourceAllocation .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/Sustainability
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/Sustainability
 :Sustainability rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TechnologyDeveloper
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TechnologyDeveloper
 :TechnologyDeveloper rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TourismDevelopment
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TourismDevelopment
 :TourismDevelopment rdf:type owl:Class ;
                     rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TransportAsPriority
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TransportAsPriority
 :TransportAsPriority rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Policy> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TransportDecarbonisation
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TransportDecarbonisation
 :TransportDecarbonisation rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Policy> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TransportOperator
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TransportOperator
 :TransportOperator rdf:type owl:Class ;
                    rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Stakeholder> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/TransportProvision
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/TransportProvision
 :TransportProvision rdf:type owl:Class ;
                     rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 
 
-###  http://www.semanticweb.org/diversify/ontologies/2025/7/policy/UserSatisfaction
+###  http://www.semanticweb.org/diversify-ccam/ontologies/policy/UserSatisfaction
 :UserSatisfaction rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.semanticweb.org/mihnea.tufis/ontologies/2025/7/policy/Goal> .
 

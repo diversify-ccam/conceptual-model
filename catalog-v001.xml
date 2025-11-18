@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/diversify/ontologies/2025/7/policy" uri="diversify-ccam-policy.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/diversify-ccam/ontologies/geography" uri="diversify-ccam-geography.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/diversify-ccam/ontologies/culture" uri="DiversifyCCAM.ttl"/>
     <uri id="Imports Wizard Entry" name="https://saref.etsi.org/saref4city/v2.1.1/" uri="external-ontologies/saref4city.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql/1.1" uri="external-ontologies/ogc-geosparql.ttl"/>
     <uri id="Imports Wizard Entry" name="https://bimerr.iot.linkeddata.es/def/weather" uri="external-ontologies/BIMERR-weather.ttl"/>
